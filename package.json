@@ -1,0 +1,51 @@
+{
+  "name": "atom-design",
+  "version": "1.0.0",
+  "description": "this is UI library base on Vue2.0",
+  "main": "lib/atomD.min.js",
+  "scripts": {
+    "none": "webpack --mode none",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Reming960227/atom-design.git"
+  },
+  "keywords": [
+    "atom",
+    "design",
+    "ui",
+    "vue",
+    "component"
+  ],
+  "author": "Reming",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Reming960227/atom-design/issues"
+  },
+  "homepage": "https://github.com/Reming960227/atom-design#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "autoprefixer": "^9.1.5",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^2.0.1",
+    "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "eslint-loader": "^2.1.2",
+    "mini-css-extract-plugin": "^0.6.0",
+    "postcss": "^7.0.2",
+    "postcss-loader": "^3.0.0",
+    "precss": "^3.1.2",
+    "vue": "^2.6.10",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2"
+  },
+  "browserslist": [
+    "iOS 7",
+    "Android >= 4.4"
+  ]
+}
