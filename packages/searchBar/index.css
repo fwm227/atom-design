@@ -1,0 +1,42 @@
+.atom-search {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background: #fff;
+  border: 10px solid #eee;
+  border-radius: 3px;
+  .search-icon {
+    flex: 0 0 18px;
+    height: 18px;
+    margin-left: 6px;
+    transition: width 0.25s;
+    .icon-wrapper {
+      position: relative;
+      z-index: 1;
+      width: 10px;
+      height: 10px;
+      border: 2px solid #666;
+      border-radius: 100%;
+      &::after {
+        content: ' ';
+        position: absolute;
+        width: 2px;
+        height: 7px;
+        top: 80%;
+        left: 80%;
+        transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, -45deg);
+        background: #666;
+      }
+    }
+  }
+  .search-input {
+    background: inherit;
+    color: inherit;
+    margin-left: 5px;
+    padding-left: 5px;
+    font-size: 18px;
+    width: 100%;
+    z-index: 2;
+  }
+}

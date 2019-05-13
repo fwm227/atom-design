@@ -1,0 +1,9 @@
+.atom-slide {
+  overflow: hidden;
+  .slide-content {
+    display: flex;
+    align-items: center;
+    transition: transform 0;
+    width: 100%;
+  }
+}

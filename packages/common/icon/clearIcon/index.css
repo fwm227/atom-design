@@ -1,0 +1,24 @@
+.icon-clear {
+  position: relative;
+  flex: 0 0 18px;
+  height: 18px;
+  border-radius: 100%;
+  background: #ccc;
+  margin: 0 5px;
+  &::before, &::after {
+    content: ' ';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 60%;
+    background: white;
+    border-radius: 6px;
+  }
+  &::before {
+    transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg);
+  }
+  &::after {
+    transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, 45deg);
+  }
+}

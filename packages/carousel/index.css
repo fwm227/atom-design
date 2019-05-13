@@ -1,0 +1,32 @@
+.atom-carousel {
+  position: relative;
+  overflow: hidden;
+  .atom-carousel-wrapper {
+    display: flex;
+    transition-property: transform;
+    .atom-carousel-item {
+      flex: 1 0 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .pagination-point-wrapper {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    .point {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 100%;
+      margin: 0 4px;
+      background: black;
+      opacity: 0.6;
+    }
+    .point.is-active {
+      background: #007aff;
+    }
+  }
+}

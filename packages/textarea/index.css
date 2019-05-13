@@ -1,0 +1,41 @@
+.atom-textarea {
+  display: inline-block;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 5px 10px;
+  line-height: 0;
+  .textarea-entry {
+    display: inline-block;
+    box-sizing: inherit;
+    color: inherit;
+    width: 100%;
+    height: calc(100% - 20px);
+    font-size: 18px;
+    line-height: 22px;
+  }
+  
+  .textarea-entry::-webkit-input-placeholder{
+    font-size: inherit;
+    color: #aaa;
+  }
+  .textarea-entry::-moz-placeholder{
+    font-size: inherit;
+    color: #aaa;
+  }
+  .textarea-entry:-moz-placeholder{
+    font-size: inherit;
+    color: #aaa;
+  }
+  .textarea-entry:-ms-input-placeholder{
+    font-size: inherit;
+    color: #aaa;
+  }
+  .textarea-limit {
+    color: inherit;
+    text-align: right;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    padding-right: 5px;
+  }
+}

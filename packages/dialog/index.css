@@ -1,0 +1,50 @@
+.atom-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2022;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .atom-dialog-content {
+    padding: 15px 0 0;
+    max-width: 375px;
+    width: 75%;
+    background: white;
+    border-radius: 5px;
+    .atom-dialog-title {
+      text-align: center;
+      font-size: 20px;
+    }
+    .atom-dialog-input {
+      display: block;
+      width: 80%;
+      margin: 15px auto;
+      padding: 5px 10px;
+      font-size: 17px;
+      line-height: 25px;
+      color: #666;
+      text-align: left;
+      border: 1px solid #999;
+      border-radius: 3px;
+    }
+    .atom-dialog-text {
+      padding: 15px;
+      font-size: 17px;
+      line-height: 25px;
+      color: #666;
+      text-align: center;
+    }
+    .atom-dialog-btn {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #f0f1f2;
+    }
+    .atom-dialog-btn button:last-child {
+      border-left: 1px solid #f0f1f2;
+    }
+  }
+}

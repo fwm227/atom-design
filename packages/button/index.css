@@ -1,0 +1,32 @@
+.atom-btn {
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 18px;
+}
+.btn-large {
+  display: block;
+  width: 100%;
+}
+.btn-primary {
+  background: white;
+  color: #108ee9;
+  border: 1px solid #108ee9;
+}
+.btn-danger {
+  background: white;
+  color: #dd2622;
+  border: 1px solid #dd2622;
+}
+.btn-warning {
+  background: white;
+  color: #ff9900;
+  border: 1px solid #ff9900;
+}
+.btn-default {
+  background: white;
+  color: #333;
+}
+.btn-active {
+  background: #f7f8f9;
+}
