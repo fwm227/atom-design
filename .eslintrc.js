@@ -1,0 +1,7 @@
+module.exports = {
+  parser: 'babel-eslint',
+  rules: {
+    'indent': ['warn', 2],
+    'semi':['warn','always']
+  }
+}
