@@ -1,6 +1,5 @@
 /node_modules/
 /backup/
-/packages/
 /.babelrc
 /.eslintignore
 /.eslintrc.js

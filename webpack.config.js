@@ -4,9 +4,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: './packages/index.js',
+  entry: './lib/index.js',
   output: {
-    path: path.resolve(__dirname, './lib'),
+    path: path.resolve(__dirname, './bundle'),
     filename: './atomD.min.js',
     library: 'atomD',
     libraryTarget: 'umd',
