@@ -65,8 +65,7 @@ if (window && window.Vue !== void 0) {
   install(window.Vue);
 }
 
-module.exports = {
-  version,
+export {
   Badge,
   Button,
   Carousel,
@@ -90,4 +89,9 @@ module.exports = {
   ActionSheet,
   LoadMore,
   LazyLoad
+}
+
+export default {
+  version,
+  install
 }

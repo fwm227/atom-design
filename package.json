@@ -1,6 +1,6 @@
 {
   "name": "atom-design",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "this is UI library base on Vue2.0",
   "main": "lib/atomD.min.js",
   "scripts": {
