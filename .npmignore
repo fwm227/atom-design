@@ -6,5 +6,6 @@
 /.gitattributes
 /.gitignore
 /.npmignore
+/packages/
 /postcss.config.js
 /webpack.config.js

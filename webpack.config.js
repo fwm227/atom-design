@@ -2,12 +2,15 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
-  entry: './lib/index.js',
+  entry: {
+   'atomD.min': './packages/index.js'
+  },
   output: {
-    path: path.resolve(__dirname, './bundle'),
-    filename: './atomD.min.js',
+    path: path.resolve(__dirname, 'bundle'),
+    filename: './[name].js',
     library: 'atomD',
     libraryTarget: 'umd',
     globalObject: 'this',
@@ -48,6 +51,16 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({filename: 'style.css'})
+    new MiniCssExtractPlugin({
+      filename: 'style.css'
+    }),
+    new OptimizeCssAssetsPlugin({
+      assetNameRegExp: /\.css$/g,
+      cssProcessor: require('cssnano'),
+      cssProcessorPluginOptions: {
+        preset: ['default', { discardComments: { removeAll: true } }],
+      },
+      canPrint: true
+    })
   ]
 }

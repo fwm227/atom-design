@@ -1,0 +1,41 @@
+.atom-toast {
+  position: fixed;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  max-width: 60%;
+  line-height: 20px;
+  padding: 6px 10px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  word-break: break-word;
+  border-radius: 5px;
+  color: white;
+  transition: all .25s ease;
+  font-size: 16px;
+  z-index: 2021;
+  &.top-active {
+    transform: translate3d(-50%, 100%, 0);
+  }
+  &.middle-active {
+    opacity: 1;
+  }
+  &.bottom-active {
+    transform: translate3d(-50%, -100%, 0);
+  }
+  &.remove {
+    opacity: 0;
+  }
+}
+.top-position {
+  top: 0;
+  transform: translate3d(-50%, -100%, 0);
+}
+.middle-position {
+  opacity: 0;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+.bottom-position {
+  bottom: 0;
+  transform: translate3d(-50%, 100%, 0);
+}

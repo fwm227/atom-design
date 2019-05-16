@@ -1,0 +1,54 @@
+.atom-input {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  height: 46px;
+  background: white;
+  font-size: 18px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f0f1f2;
+  .input-title {
+    flex: 0 0 80px;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .input-bar {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: inherit;
+    color: initial;
+    background: transparent;
+    padding: 2px 0;
+    border: none;
+    outline: none;
+  }
+  .input-bar::-webkit-input-placeholder{
+    font-size: inherit;
+    color: #aaa;
+  }
+  .input-bar::-moz-placeholder{
+    font-size: inherit;
+    color: #aaa;
+  }
+  .input-bar:-moz-placeholder{
+    font-size: inherit;
+    color: #aaa;
+  }
+  .input-bar:-ms-input-placeholder{
+    font-size: inherit;
+    color: #aaa;
+  }
+  .input-align-center {
+    text-align: center;
+  }
+  .input-align-right {
+    text-align: right;
+  }
+}

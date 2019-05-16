@@ -1,9 +1,1 @@
-.atom-slide {
-  overflow: hidden;
-  .slide-content {
-    display: flex;
-    align-items: center;
-    transition: transform 0;
-    width: 100%;
-  }
-}
+.atom-slide{overflow:hidden}.atom-slide .slide-content{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;transition:-webkit-transform 0;transition:transform 0;transition:transform 0,-webkit-transform 0;width:100%}

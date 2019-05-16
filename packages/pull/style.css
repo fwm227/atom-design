@@ -1,0 +1,9 @@
+.atom-pull {
+  overflow-y: auto;
+  .atom-pull-wrapper {
+    overflow: hidden;
+    .atom-pull-content {
+      transition: transform 0;
+    }
+  }
+}
