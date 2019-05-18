@@ -1,6 +1,7 @@
 import './style.css';
 
 export default {
+  name: 'atom-slideItem',
   data () {
     return {
       startX: 0,

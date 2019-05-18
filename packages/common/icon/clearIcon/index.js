@@ -1,6 +1,6 @@
 import './style.css';
 export default {
-  name: 'clearIcon',
+  name: 'atom-clearIcon',
   render (h) {
     return h('div', {staticClass: 'icon-clear'});
   }

@@ -2,6 +2,7 @@ import './style.css';
 import atomCarousel from '../carousel';
 
 export default {
+  name: 'atom-tabs',
   props: {
     value: {
       type: Number

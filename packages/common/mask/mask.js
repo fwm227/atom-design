@@ -1,6 +1,7 @@
 import './style.css';
 
 export default {
+  name: 'atom-mask',
   data () {
     return {
       isShow: false
