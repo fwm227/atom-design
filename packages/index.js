@@ -25,7 +25,7 @@ import Textarea from './textarea';
 import LoadMore from './loadMore';
 import LazyLoad from './lazyLoad';
 
-const version = '1.0.0';
+const version = '1.1.0';
 const compList = [
   Badge,
   Button,
@@ -55,18 +55,17 @@ const install = function (Vue) {
   // handle component
   compList.forEach(function (Component, idx) {
     Vue.component(Component.name, Component);
-  })
+  });
   // handle directive
   Vue.directive('loadmore', LoadMore.loadmore);
   Vue.directive('lazyload', LazyLoad.lazyload);
-}
+};
 
 if (window && window.Vue !== void 0) {
   install(window.Vue);
 }
 
-module.exports = {
-  version,
+export {
   Badge,
   Button,
   Carousel,
@@ -90,4 +89,9 @@ module.exports = {
   ActionSheet,
   LoadMore,
   LazyLoad
-}
+};
+
+export default {
+  version,
+  install
+};

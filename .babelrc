@@ -6,11 +6,5 @@
         "modules": false
       }
     ]
-  ],
-  "plugins": [
-    ["component", {
-      "libraryName": "atom-design",
-      "style": true
-    }]
   ]
 }

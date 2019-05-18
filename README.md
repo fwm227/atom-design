@@ -1,5 +1,5 @@
-<h1 style="color: #0000ff; font-size: 50px; text-align: center;">Atom-Design</h1>
-<div style="text-align: center; font-size: 22px; color: #666;">Mobile side UI-library base on Vue2.0</div>
+# Atom-Design
+Mobile side UI-library base on Vue2.0
 
 ## Features
 * Icon drawn by CSS
