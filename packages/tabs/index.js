@@ -1,4 +1,3 @@
-import './style.css';
 import atomCarousel from '../carousel';
 
 export default {

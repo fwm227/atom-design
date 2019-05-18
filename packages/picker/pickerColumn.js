@@ -1,4 +1,5 @@
 export default {
+  name: 'atom-pickerColumn',
   data () {
     return {
       preMoveY: 0,

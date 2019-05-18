@@ -1,4 +1,5 @@
 import Vue from 'vue';
+
 const ToastClass = Vue.extend(require('./toast.js').default);
 
 ToastClass.prototype.removeDom = function () {

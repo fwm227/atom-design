@@ -25,7 +25,9 @@ import Textarea from './textarea';
 import LoadMore from './loadMore';
 import LazyLoad from './lazyLoad';
 
-const version = '1.1.0';
+import pkgInfo from '../package.json';
+const version = pkgInfo.version;
+
 const compList = [
   Badge,
   Button,
