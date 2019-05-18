@@ -4,6 +4,7 @@
   height: 50px;
   background: #fff;
   border: 10px solid #eee;
+  box-sizing: border-box;
   border-radius: 3px;
   .search-icon {
     flex: 0 0 18px;
