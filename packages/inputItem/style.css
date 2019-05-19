@@ -23,11 +23,13 @@
     height: 40px;
     line-height: 40px;
     font-size: inherit;
-    color: initial;
     background: transparent;
     padding: 2px 0;
     border: none;
     outline: none;
+    &::-ms-clear, &::-ms-reveal {
+      display: none;
+    }
   }
   .input-bar::-webkit-input-placeholder{
     font-size: inherit;

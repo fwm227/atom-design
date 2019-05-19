@@ -2,7 +2,7 @@ import './style.css';
 import clearIcon from '../common/icon/clearIcon';
 
 export default {
-  name: 'atom-inputItem',
+  name: 'atom-input-item',
   data () {
     return {
       innerValue: null,

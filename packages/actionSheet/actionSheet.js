@@ -3,7 +3,7 @@ import atomPopup from '../common/mixin/popup';
 import {slideTopTransition} from '../common/transition';
 
 export default {
-  name: 'atom-actionSheet',
+  name: 'atom-action-sheet',
   mixins: [atomPopup],
   render: function (h) {
     return h('div', {

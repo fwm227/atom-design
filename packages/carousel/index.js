@@ -151,7 +151,6 @@ export default {
             this.touchStartX = event.targetTouches[0].pageX;
           },
           touchmove: () => {
-            event.preventDefault();
             if (this.isLock) return;
             const carouselDom = event.currentTarget;
             const touchEndX = event.changedTouches[0].pageX;

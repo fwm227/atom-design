@@ -4,7 +4,7 @@ import atomPopup from '../common/mixin/popup';
 import {scaleTransition} from '../common/transition';
 
 export default {
-  name: 'atom-selectBox',
+  name: 'atom-select-box',
   mixins: [atomPopup],
   data () {
     return {

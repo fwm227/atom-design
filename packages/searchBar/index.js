@@ -2,7 +2,7 @@ import './style.css';
 import clearIcon from '../common/icon/clearIcon';
 
 export default {
-  name: 'atom-searchBar',
+  name: 'atom-search-bar',
   data () {
     return {
       innerValue: null,
