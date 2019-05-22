@@ -4,11 +4,11 @@
   "description": "this is UI library base on Vue2.0",
   "main": "bundle/atomD.min.js",
   "scripts": {
-    "none": "webpack --mode none",
-    "dev": "webpack --mode development",
+    "test": "jest",
+    "lint": "eslint ./packages",
     "build": "webpack --mode production",
     "babel": "babel packages --out-dir lib --presets=@babel/env --plugin @babel/plugin-transform-runtime",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postcss": "postcss packages/**/*.css --base packages --dir lib"
   },
   "repository": {
     "type": "git",
@@ -34,12 +34,15 @@
     "@babel/preset-env": "^7.4.4",
     "@babel/runtime": "^7.4.4",
     "autoprefixer": "^9.1.5",
-    "babel-eslint": "^8.2.2",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "clean-webpack-plugin": "^2.0.1",
     "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
     "eslint-loader": "^2.1.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.8.0",
     "mini-css-extract-plugin": "^0.6.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss": "^7.0.2",

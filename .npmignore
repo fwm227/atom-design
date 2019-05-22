@@ -1,5 +1,8 @@
 /node_modules/
 /backup/
+/_tests_/
+/_scripts_/
+/.travis.yml
 /.babelrc
 /.eslintignore
 /.eslintrc.js
@@ -8,3 +11,4 @@
 /packages/
 /postcss.config.js
 /webpack.config.js
+/jest.config.js

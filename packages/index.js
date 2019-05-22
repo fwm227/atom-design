@@ -2,6 +2,7 @@
 import Toast from './toast';
 import Picker from './picker';
 import Dialog from './dialog';
+import SelectBox from './selectBox';
 import ActionSheet from './actionSheet';
 // components
 import Badge from './badge';
@@ -16,7 +17,6 @@ import Pull from './pull';
 import Radio from './radio';
 import Range from './range';
 import SearchBar from './searchBar';
-import SelectBox from './selectBox';
 import SlideItem from './slideItem';
 import Switch from './switch';
 import Tabs from './tabs';
@@ -41,7 +41,6 @@ const compList = [
   Radio,
   Range,
   SearchBar,
-  SelectBox,
   SlideItem,
   Switch,
   Tabs,
@@ -53,6 +52,7 @@ const install = function (Vue) {
   Vue.$toast = Toast;
   Vue.$picker = Picker;
   Vue.$dialog = Dialog;
+  Vue.$selectBox = SelectBox;
   Vue.$actionSheet = ActionSheet;
   // handle component
   compList.forEach(function (Component, idx) {
@@ -80,7 +80,6 @@ export {
   Radio,
   Range,
   SearchBar,
-  SelectBox,
   SlideItem,
   Switch,
   Tabs,
@@ -88,6 +87,7 @@ export {
   Toast,
   Picker,
   Dialog,
+  SelectBox,
   ActionSheet,
   LoadMore,
   LazyLoad
