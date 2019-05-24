@@ -9,8 +9,8 @@ PickerClass.prototype.close = function () {
 };
 PickerClass.prototype.config = function (options) {
   this._pickerList = options.data;
-  this._submitBtn = options.submitBtn;
   this._cancelBtn = options.cancelBtn;
+  this._submitBtn = options.submitBtn;
 };
 
 function Picker (options) {

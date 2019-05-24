@@ -29,4 +29,4 @@ Vue.use(atomD)
 
 MIT
 
-Copyright (c) 2019 Reming
+Copyright (c) 2019 reming

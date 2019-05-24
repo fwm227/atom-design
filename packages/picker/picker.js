@@ -116,27 +116,27 @@ export default {
               attrs: {
                 actionStyle: this._cancelBtn && this._cancelBtn.actionStyle
               },
-              style: (this._cancelBtn && this._cancelBtn.style) || 'border: none; font-size: 16px;',
+              style: this._cancelBtn && this._cancelBtn.style ? `max-height: 39px; font-size: 16px; ${this._cancelBtn.style}` : 'border: none; height: 39px; font-size: 16px;',
               nativeOn: {
                 click: () => {
                   this.isShow = false;
-                  this._cancelBtn && this._cancelBtn.event(this.selectArr);
+                  this._cancelBtn && this._cancelBtn.event && this._cancelBtn.event(this.selectArr);
                 }
               }
-            }, '取消'),
+            }, this._cancelBtn && this._cancelBtn.text ? this._cancelBtn.text : 'Cancel'),
             h('atom-btn', {
               attrs: {
                 type: 'primary',
                 actionStyle: this._submitBtn && this._submitBtn.actionStyle
               },
-              style: (this._submitBtn && this._submitBtn.style) || 'border: none; font-size: 16px;',
+              style: this._submitBtn && this._submitBtn.style ? `max-height: 39px; font-size: 16px; ${(this._submitBtn.style)}` : 'border: none; height: 39px; font-size: 16px;',
               nativeOn: {
                 click: () => {
                   this.isShow = false;
-                  this._submitBtn && this._submitBtn.event(this.selectArr);
+                  this._submitBtn && this._submitBtn.event && this._submitBtn.event(this.selectArr);
                 }
               }
-            }, '确定')
+            }, this._submitBtn && this._submitBtn.text ? this._submitBtn.text : 'Submit')
           ]),
           h('div', {
             staticClass: 'picker-content'
