@@ -1,6 +1,6 @@
 {
   "name": "atom-design",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "this is UI library base on Vue2.0",
   "main": "bundle/atomD.min.js",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Reming960227/atom-design.git"
+    "url": "git+https://github.com/reming0227/atom-design.git"
   },
   "keywords": [
     "atom",
@@ -21,12 +21,12 @@
     "vue",
     "component"
   ],
-  "author": "Reming",
+  "author": "reming",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Reming960227/atom-design/issues"
+    "url": "https://github.com/reming0227/atom-design/issues"
   },
-  "homepage": "https://github.com/Reming960227/atom-design#readme",
+  "homepage": "https://github.com/reming0227/atom-design#readme",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
