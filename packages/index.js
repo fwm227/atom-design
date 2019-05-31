@@ -22,7 +22,7 @@ import Switch from './switch';
 import Tabs from './tabs';
 import Textarea from './textarea';
 // directive
-import LoadMore from './loadMore';
+import Loadmore from './loadmore';
 import LazyLoad from './lazyLoad';
 
 import pkgInfo from '../package.json';
@@ -59,10 +59,10 @@ const install = function (Vue) {
     Vue.component(Component.name, Component);
   });
   // handle directive
-  Vue.directive('loadmore', LoadMore.loadmore);
-  Vue.directive('lazyload', LazyLoad.lazyload);
+  Vue.use(Loadmore);
+  Vue.use(LazyLoad);
 };
-
+// auto install
 if (window && window.Vue !== void 0) {
   install(window.Vue);
 }
@@ -89,7 +89,7 @@ export {
   Dialog,
   SelectBox,
   ActionSheet,
-  LoadMore,
+  Loadmore,
   LazyLoad
 };
 
