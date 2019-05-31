@@ -95,7 +95,7 @@ describe('atom-design test', () => {
     Vue.$selectBox = SelectBox;
     Vue.$actionSheet = ActionSheet;
     Vue.use(Loadmore);
-    Vue.user(Lazyload);
+    Vue.use(Lazyload);
 
     const components = Vue.options.components;
     const directives = Vue.options.directives;
