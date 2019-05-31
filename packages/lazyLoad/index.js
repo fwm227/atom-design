@@ -1,5 +1,5 @@
-import LazyLoad from './lazyLoad.js';
+import Lazyload from './lazyload.js';
 
 export default function install (Vue) {
-  Vue.directive('lazyload', LazyLoad.lazyLoad);
+  Vue.directive('lazyload', Lazyload.lazyload);
 };

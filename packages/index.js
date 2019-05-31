@@ -23,7 +23,7 @@ import Tabs from './tabs';
 import Textarea from './textarea';
 // directive
 import Loadmore from './loadmore';
-import LazyLoad from './lazyLoad';
+import Lazyload from './lazyload';
 
 import pkgInfo from '../package.json';
 const version = pkgInfo.version;
@@ -60,7 +60,7 @@ const install = function (Vue) {
   });
   // handle directive
   Vue.use(Loadmore);
-  Vue.use(LazyLoad);
+  Vue.use(Lazyload);
 };
 // auto install
 if (window && window.Vue !== void 0) {
@@ -90,7 +90,7 @@ export {
   SelectBox,
   ActionSheet,
   Loadmore,
-  LazyLoad
+  Lazyload
 };
 
 export default {

@@ -64,7 +64,7 @@ function initImg () {
 }
 
 export default {
-  lazyLoad: {
+  lazyload: {
     inserted: (el, binding) => {
       this.context = {el: el, src: binding.value, isLoad: false};
       initImg.call(this.context);

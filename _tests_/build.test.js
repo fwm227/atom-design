@@ -22,8 +22,8 @@ import {
   Dialog,
   SelectBox,
   ActionSheet,
-  LoadMore,
-  LazyLoad
+  Loadmore,
+  Lazyload
 } from '../lib/index.js';
 
 const compList = [
@@ -94,8 +94,8 @@ describe('atom-design test', () => {
     Vue.$dialog = Dialog;
     Vue.$selectBox = SelectBox;
     Vue.$actionSheet = ActionSheet;
-    Vue.directive('loadmore', LoadMore.loadmore);
-    Vue.directive('lazyload', LazyLoad.lazyload);
+    Vue.use(Loadmore);
+    Vue.user(Lazyload);
 
     const components = Vue.options.components;
     const directives = Vue.options.directives;
