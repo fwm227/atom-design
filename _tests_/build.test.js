@@ -22,8 +22,8 @@ import {
   Dialog,
   SelectBox,
   ActionSheet,
-  Loadmore,
-  Lazyload
+  Lazyload,
+  Loadmore
 } from '../lib/index.js';
 
 const compList = [
@@ -81,8 +81,8 @@ describe('atom-design test', () => {
     expect(Vue.$selectBox).not.toBeUndefined();
     expect(Vue.$actionSheet).not.toBeUndefined();
     // judge directive whether exist
-    expect(directives.loadmore).not.toBeUndefined();
     expect(directives.lazyload).not.toBeUndefined();
+    expect(directives.loadmore).not.toBeUndefined();
   });
   test('component test', () => {
     // Inject component, popup object and directive into Vue object
@@ -94,8 +94,8 @@ describe('atom-design test', () => {
     Vue.$dialog = Dialog;
     Vue.$selectBox = SelectBox;
     Vue.$actionSheet = ActionSheet;
-    Vue.use(Loadmore);
-    Vue.use(Lazyload);
+    Vue.directive('lazyload', Lazyload);
+    Vue.directive('loadmore', Loadmore);
 
     const components = Vue.options.components;
     const directives = Vue.options.directives;
@@ -110,7 +110,7 @@ describe('atom-design test', () => {
     expect(Vue.$selectBox).not.toBeUndefined();
     expect(Vue.$actionSheet).not.toBeUndefined();
     // judge directive whether exist
-    expect(directives.loadmore).not.toBeUndefined();
     expect(directives.lazyload).not.toBeUndefined();
+    expect(directives.loadmore).not.toBeUndefined();
   });
 });
