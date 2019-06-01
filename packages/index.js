@@ -49,18 +49,18 @@ const compList = [
 
 const install = function (Vue) {
   // handle js plugin
-  Vue.$toast = Toast;
-  Vue.$picker = Picker;
-  Vue.$dialog = Dialog;
-  Vue.$selectBox = SelectBox;
-  Vue.$actionSheet = ActionSheet;
+  Vue.$toast = Vue.prototype.$toast = Toast;
+  Vue.$picker = Vue.prototype.$picker = Picker;
+  Vue.$dialog = Vue.prototype.$dialog = Dialog;
+  Vue.$selectBox = Vue.prototype.$selectBox = SelectBox;
+  Vue.$actionSheet = Vue.prototype.$actionSheet = ActionSheet;
   // handle component
   compList.forEach(function (Component, idx) {
     Vue.component(Component.name, Component);
   });
   // handle directive
-  Vue.use(Loadmore);
-  Vue.use(Lazyload);
+  Vue.directive('lazyload', Lazyload.lazyload);
+  Vue.directive('loadmore', Loadmore.loadmore);
 };
 // auto install
 if (window && window.Vue !== void 0) {

@@ -74,7 +74,7 @@ export default {
       }, this.title),
       h('input', {
         domProps: {
-          value: this.value
+          value: this.innerValue
         },
         attrs: {
           type: this.type,
