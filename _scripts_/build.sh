@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cnpm run lint
 cnpm run build
