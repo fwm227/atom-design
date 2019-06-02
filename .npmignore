@@ -2,6 +2,7 @@
 /backup/
 /_tests_/
 /_scripts_/
+/.github/
 /.travis.yml
 /.babelrc
 /.eslintignore
