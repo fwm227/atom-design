@@ -1,6 +1,10 @@
 {
   "name": "atom-design",
+<<<<<<< HEAD
   "version": "1.3.0-alpha.2",
+=======
+  "version": "1.3.0",
+>>>>>>> e475f99... :bookmark: Version publish: v1.3.0
   "description": "this is UI library base on Vue2.0",
   "main": "bundle/atomD.min.js",
   "scripts": {

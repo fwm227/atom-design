@@ -59,8 +59,8 @@ const install = function (Vue) {
     Vue.component(Component.name, Component);
   });
   // handle directive
-  Vue.directive('lazyload', Lazyload.lazyload);
-  Vue.directive('loadmore', Loadmore.loadmore);
+  Vue.directive('lazyload', Lazyload);
+  Vue.directive('loadmore', Loadmore);
 };
 // auto install
 if (window && window.Vue !== void 0) {
