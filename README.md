@@ -27,6 +27,13 @@ import 'atom-design/bundle/style.css'
 Vue.use(atomD)
 ```
 
+## :memo: Documentation
+Please click [Documentation](https://atom-design.github.io/docs/#/)
+
+## :heart: Support Atom-Design
+
+You can buy a drink for us If you feel the atom-design is good to use then click this [Support Atom-Design](https://www.patreon.com/remingchan)
+
 ## :page_facing_up: Licence
 
 MIT
