@@ -46,6 +46,7 @@ function scrollEvent () {
   }
   if (canExec && !this.lock) {
     // handle lazy load
+    this.lock = true;
     const tempImg = new Image();
     tempImg.src = this.src;
     tempImg.addEventListener('load', () => {
@@ -53,8 +54,6 @@ function scrollEvent () {
       this.el.setAttribute('loaded', this.isLoad);
       this.el.src = this.src;
     }, {capture: false, once: true});
-  } else if (this.lock) {
-    this.lock = false;
   }
 }
 

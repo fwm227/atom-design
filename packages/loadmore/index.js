@@ -39,12 +39,7 @@ function scrollEvent () {
   } else if (this.scrollTarget === window) {
     canExec = 2 * window.pageYOffset + this.el.getBoundingClientRect().top + document.documentElement.clientHeight + this.distance >= document.documentElement.scrollHeight;
   }
-  if (canExec && !this.lock) {
-    this.fn();
-    this.lock = true;
-  } else if (this.lock) {
-    this.lock = false;
-  }
+  canExec && this.fn();
 }
 
 export default {
