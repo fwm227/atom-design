@@ -42,8 +42,8 @@ function scrollEvent () {
   if (canExec && !this.lock) {
     this.fn();
     this.lock = true;
-  } else {
-    if (this.lock) this.lock = false;
+  } else if (this.lock) {
+    this.lock = false;
   }
 }
 

@@ -53,8 +53,8 @@ function scrollEvent () {
       this.el.setAttribute('loaded', this.isLoad);
       this.el.src = this.src;
     }, {capture: false, once: true});
-  } else {
-    if (this.lock) this.lock = false;
+  } else if (this.lock) {
+    this.lock = false;
   }
 }
 
