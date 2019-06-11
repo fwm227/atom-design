@@ -30,7 +30,7 @@ Vue.use(atomD)
 ## :memo: Documentation
 Please click this [Documentation](https://atom-design.github.io/docs/#/)
 
-## :sparkling_heart: Support Atom-Design
+## :heart: Support Atom-Design
 
 You can buy a drink for us If you feel the atom-design is good to use then click this [Support Atom-Design](https://www.patreon.com/remingchan)
 
