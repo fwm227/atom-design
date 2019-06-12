@@ -14,9 +14,9 @@
     "last 2 versions",
     "Firefox ESR",
     "> 1%",
-    "ie >= 8",
-    "iOS >= 8",
-    "Android >= 4"
+    "not ie <= 8",
+    "iOS >= 10.3",
+    "Android >= 6"
   ],
   "repository": {
     "type": "git",
