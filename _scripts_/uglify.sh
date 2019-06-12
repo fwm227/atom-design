@@ -16,8 +16,8 @@ uglifyjs ../lib_unuglify/common/transition/index.js -o ../lib/common/transition/
 uglifyjs ../lib_unuglify/common/util/Time.js -o ../lib/common/util/Time.js -c -m
 uglifyjs ../lib_unuglify/common/util/typeEqual.js -o ../lib/common/util/typeEqual.js -c -m
 
-uglifyjs ../lib_unuglify/dialog/dialog.js -o ../lib/carousel/dialog.js -c -m
-uglifyjs ../lib_unuglify/dialog/index.js -o ../lib/carousel/index.js -c -m
+uglifyjs ../lib_unuglify/dialog/dialog.js -o ../lib/dialog/dialog.js -c -m
+uglifyjs ../lib_unuglify/dialog/index.js -o ../lib/dialog/index.js -c -m
 
 uglifyjs ../lib_unuglify/drawer/index.js -o ../lib/drawer/index.js -c -m
 
@@ -58,3 +58,5 @@ uglifyjs ../lib_unuglify/textarea/index.js -o ../lib/textarea/index.js -c -m
 
 uglifyjs ../lib_unuglify/toast/toast.js -o ../lib/toast/toast.js -c -m
 uglifyjs ../lib_unuglify/toast/index.js -o ../lib/toast/index.js -c -m
+
+rm ../lib/index.js
