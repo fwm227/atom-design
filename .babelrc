@@ -1,22 +1,5 @@
 {
-  "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "modules": false,
-        "targets": {
-          "browsers": [
-            "last 2 versions",
-            "Firefox ESR",
-            "> 1%",
-            "ie >= 8",
-            "iOS >= 8",
-            "Android >= 4"
-          ]
-        }
-      }
-    ]
-  ],
+  "presets": ["@babel/preset-env"],
   "env": {
     test: {
       plugins: ["transform-es2015-modules-commonjs"]

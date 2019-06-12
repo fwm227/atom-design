@@ -7,9 +7,17 @@
     "test": "jest",
     "lint": "eslint ./packages",
     "build": "webpack --mode production",
-    "babel": "babel packages --out-dir lib --presets=@babel/env --plugin @babel/plugin-transform-runtime",
+    "babel": "babel packages --out-dir lib",
     "postcss": "postcss packages/**/*.css --base packages --dir lib"
   },
+  "browserslist": [
+    "last 2 versions",
+    "Firefox ESR",
+    "> 1%",
+    "ie >= 8",
+    "iOS >= 8",
+    "Android >= 4"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/reming0227/atom-design.git"
@@ -35,6 +43,7 @@
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-plugin-uglify": "^1.0.2",
     "clean-webpack-plugin": "^2.0.1",
     "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
