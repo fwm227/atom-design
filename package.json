@@ -7,7 +7,8 @@
     "test": "jest",
     "lint": "eslint ./packages",
     "build": "webpack --mode production",
-    "babel": "babel --plugin uglify:after packages --out-dir lib_unuglify",
+    "babel": "babel packages --out-dir lib_unuglify",
+    "uglify:dir": "babel packages --out-dir lib",
     "postcss": "postcss packages/**/*.css --base packages --dir lib"
   },
   "browserslist": [
