@@ -10,6 +10,7 @@
 /.gitignore
 /.npmignore
 /packages/
+/lib_unuglify/
 /postcss.config.js
 /webpack.config.js
 /jest.config.js
