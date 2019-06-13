@@ -44,8 +44,15 @@
       justify-content: space-between;
       border-top: 1px solid #f0f1f2;
     }
-    .atom-dialog-btn button:last-child {
-      border-left: 1px solid #f0f1f2;
+    .atom-dialog-btn::after {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate3d(-50%, 0, 0);
+      height: 100%;
+      width: 1px;
+      background: #f0f1f2;
     }
   }
 }
