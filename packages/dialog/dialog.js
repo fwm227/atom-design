@@ -44,8 +44,8 @@ export default {
       }, this._cancelBtn.style)),
       nativeOn: {
         click: () => {
-          this._cancelBtn && this._cancelBtn.event && this.isInput ? this._cancelBtn.event(this.promptValue) : this._cancelBtn.event();
           this.close();
+          (this._cancelBtn && this._cancelBtn.event) && (this.isInput ? this._cancelBtn.event(this.promptValue) : this._cancelBtn.event());
         }
       }
     }, this._cancelBtn && this._cancelBtn.text);
@@ -60,8 +60,8 @@ export default {
       }, this._submitBtn.style)),
       nativeOn: {
         click: () => {
-          this._submitBtn && this._submitBtn.event && this.isInput ? this._submitBtn.event(this.promptValue) : this._submitBtn.event();
           this.close();
+          (this._submitBtn && this._submitBtn.event) && (this.isInput ? this._submitBtn.event(this.promptValue) : this._submitBtn.event());
         }
       }
     }, this._submitBtn && this._submitBtn.text);

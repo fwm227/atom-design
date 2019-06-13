@@ -61,9 +61,9 @@ var _default = {
       }, this._cancelBtn.style),
       nativeOn: {
         click: function click() {
-          _this._cancelBtn && _this._cancelBtn.event && _this.isInput ? _this._cancelBtn.event(_this.promptValue) : _this._cancelBtn.event();
-
           _this.close();
+
+          _this._cancelBtn && _this._cancelBtn.event && (_this.isInput ? _this._cancelBtn.event(_this.promptValue) : _this._cancelBtn.event());
         }
       }
     }, this._cancelBtn && this._cancelBtn.text);
@@ -78,9 +78,9 @@ var _default = {
       }, this._submitBtn.style),
       nativeOn: {
         click: function click() {
-          _this._submitBtn && _this._submitBtn.event && _this.isInput ? _this._submitBtn.event(_this.promptValue) : _this._submitBtn.event();
-
           _this.close();
+
+          _this._submitBtn && _this._submitBtn.event && (_this.isInput ? _this._submitBtn.event(_this.promptValue) : _this._submitBtn.event());
         }
       }
     }, this._submitBtn && this._submitBtn.text);
