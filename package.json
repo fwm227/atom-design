@@ -24,10 +24,13 @@
     "url": "git+https://github.com/reming0227/atom-design.git"
   },
   "keywords": [
+    "atom-design",
     "atom",
     "design",
-    "ui",
+    "vue-ui",
+    "vue-component",
     "vue",
+    "ui",
     "component"
   ],
   "author": "reming",
