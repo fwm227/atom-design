@@ -58,3 +58,5 @@ uglifyjs ../lib_unuglify/textarea/index.js -o ../lib/textarea/index.js -c -m
 
 uglifyjs ../lib_unuglify/toast/toast.js -o ../lib/toast/toast.js -c -m
 uglifyjs ../lib_unuglify/toast/index.js -o ../lib/toast/index.js -c -m
+
+uglifyjs ../lib_unuglify/index.js -o ../lib/index.js -c -m
