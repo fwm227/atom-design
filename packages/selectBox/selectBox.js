@@ -35,7 +35,7 @@ export default {
               style: el.style,
               on: {
                 click: () => {
-                  this._callback(el.text, index);
+                  this._callback && this._callback(el.text, index);
                 }
               }
             }, el.text);

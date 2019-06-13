@@ -48,7 +48,7 @@ var _default = {
         style: el.style,
         on: {
           click: function click() {
-            _this._callback(el.text, index);
+            _this._callback && _this._callback(el.text, index);
           }
         }
       }, el.text);

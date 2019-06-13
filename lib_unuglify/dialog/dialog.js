@@ -61,7 +61,7 @@ var _default = {
       }, this._cancelBtn.style),
       nativeOn: {
         click: function click() {
-          _this._cancelBtn && _this.isInput ? _this._cancelBtn.event(_this.promptValue) : _this._cancelBtn.event();
+          _this._cancelBtn && _this._cancelBtn.event && _this.isInput ? _this._cancelBtn.event(_this.promptValue) : _this._cancelBtn.event();
 
           _this.close();
         }
@@ -78,7 +78,7 @@ var _default = {
       }, this._submitBtn.style),
       nativeOn: {
         click: function click() {
-          _this._submitBtn && _this.isInput ? _this._submitBtn.event(_this.promptValue) : _this._submitBtn.event();
+          _this._submitBtn && _this._submitBtn.event && _this.isInput ? _this._submitBtn.event(_this.promptValue) : _this._submitBtn.event();
 
           _this.close();
         }
