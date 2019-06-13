@@ -6,19 +6,26 @@
 
 Mobile side UI-library base on Vue2.0
 
+## :iphone: Environment Support
+
+> not polyfills
+
+* iOS 10.3+
+* Android 6+
+
 ## :sparkles: Features
 * Icon drawn by CSS
 * Customizable components style
 * Simple and easy to use components
 
-## :bulb: Installation
+## :package: Installation
 
 ```bash
 npm install atom-design --save
 yarn add atom-design
 ```
 
-## :wrench: Usage
+## :hammer: Usage
 
 ```javascript
 import Vue from 'vue'
