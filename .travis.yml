@@ -7,9 +7,6 @@ node_js:
 
 script:
   - npm run lint
-  - npm run build
-  - npm run babel
-  - npm run postcss
 
 after_success:
   - npm run test
