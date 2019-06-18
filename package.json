@@ -55,7 +55,7 @@
     "jest": "^24.8.0",
     "mini-css-extract-plugin": "^0.6.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
-    "postcss": "^7.0.17",
+    "postcss": "^7.0.2",
     "postcss-cli": "^5.0.1",
     "postcss-loader": "^3.0.0",
     "precss": "^3.1.2",
