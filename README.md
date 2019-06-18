@@ -41,7 +41,7 @@ Please click this [Documentation](https://atom-design.github.io/docs/#/)
 
 You can buy a drink for us If you feel the atom-design is good to use then click this [Support Atom-Design](https://www.patreon.com/remingchan)
 
-## :page_facing_up: Licence
+## :page_facing_up: License
 
 [MIT](https://opensource.org/licenses/MIT)
 
