@@ -50,7 +50,6 @@ export default {
         size: 'large',
         actionStyle: this._cancelBtn && this._cancelBtn.actionStyle
       },
-      staticClass: 'dialog-btn',
       style: _cancelBtnStyle,
       nativeOn: {
         click: () => {
