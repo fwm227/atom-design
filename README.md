@@ -2,7 +2,7 @@
 
 # Atom-Design
 
-[![Build Status](https://travis-ci.org/reming0227/atom-design.svg?branch=master)](https://travis-ci.org/reming0227/atom-design) [![Version](https://img.shields.io/badge/npm-1.3.7-blue.svg)](https://www.npmjs.com/package/atom-design) [![Gitter](https://badges.gitter.im/atom_design/AtomDesign.svg)](https://gitter.im/atom_design/AtomDesign?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Build Status](https://travis-ci.org/reming0227/atom-design.svg?branch=master)](https://travis-ci.org/reming0227/atom-design) [![Version](https://img.shields.io/badge/npm-1.3.8-blue.svg)](https://www.npmjs.com/package/atom-design) [[Downloads](https://img.shields.io/badge/downloads-1.2k%2Fmonth-brightgreen.svg)]() [![Gitter](https://badges.gitter.im/atom_design/AtomDesign.svg)](https://gitter.im/atom_design/AtomDesign?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 Mobile side UI-library base on Vue2.0
 
@@ -45,4 +45,4 @@ You can buy a drink for us If you feel the atom-design is good to use then click
 
 MIT
 
-Copyright (c) 2019 reming
+Copyright (c) 2019-present, reming
