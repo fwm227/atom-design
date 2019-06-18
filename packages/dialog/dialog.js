@@ -2,6 +2,8 @@ import './style.css';
 import atomBtn from '../button';
 import atomPopup from '../common/mixin/popup';
 import {scaleTransition} from '../common/transition';
+import isObject from '../common/util/isObject';
+import objAssign from '../common/util/objAssign';
 
 export default {
   name: 'atom-dialog',
@@ -33,13 +35,22 @@ export default {
       }
     });
 
+    // init button-style
+    const _defaultCancel = {
+      'line-height': '28px'
+    }
+    const _defaultSubmit = {
+      'line-height': '28px',
+      'color': '#108ee9'
+    }
+
     const cancelBtn = h('atom-btn', {
       attrs: {
         type: 'default',
         size: 'large',
         actionStyle: this._cancelBtn && this._cancelBtn.actionStyle
       },
-      style: this._cancelBtn && this._cancelBtn.style,
+      style: this._cancelBtn && isObject(this._cancelBtn.style) ? objAssign(_defaultCancel, this._cancelBtn.style) : _defaultCancel,
       nativeOn: {
         click: () => {
           this.close();
@@ -50,10 +61,9 @@ export default {
     const submitBtn = h('atom-btn', {
       attrs: {
         size: 'large',
-        type: 'primary',
         actionStyle: this._submitBtn && this._submitBtn.actionStyle
       },
-      style: this._submitBtn && this._submitBtn,
+      style: this._submitBtn && isObject(this._submitBtn.style) ? objAssign(_defaultSubmit, this._submitBtn.style) : _defaultSubmit,
       nativeOn: {
         click: () => {
           this.close();

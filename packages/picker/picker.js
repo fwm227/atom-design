@@ -3,6 +3,8 @@ import atomPopup from '../common/mixin/popup';
 import atomBtn from '../button';
 import {slideTopTransition} from '../common/transition';
 import pickerColumn from './pickerColumn.js';
+import isObject from '../common/util/isObject';
+import objAssign from '../common/util/objAssign';
 
 export default {
   name: 'atom-picker',
@@ -87,6 +89,17 @@ export default {
     });
   },
   render: function (h) {
+    // init button-style
+    const _defaultCancel = {
+      'max-height': '39px',
+      'font-size': '16px'
+    }
+    const _defaultSubmit = {
+      'max-height': '39px',
+      'font-size': '16px',
+      'color': '#108ee9'
+    }
+
     return h('div', {
       staticClass: 'atom-picker',
       on: {
@@ -116,7 +129,7 @@ export default {
               attrs: {
                 actionStyle: this._cancelBtn && this._cancelBtn.actionStyle
               },
-              style: this._cancelBtn && this._cancelBtn.style ? `max-height: 39px; font-size: 16px; ${this._cancelBtn.style}` : 'border: none; height: 39px; font-size: 16px;',
+              style: this._cancelBtn && isObject(this._cancelBtn.style) ? objAssign(_defaultCancel, this._cancelBtn.style) : _defaultCancel,
               nativeOn: {
                 click: () => {
                   this.isShow = false;
@@ -126,10 +139,9 @@ export default {
             }, this._cancelBtn && this._cancelBtn.text ? this._cancelBtn.text : 'Cancel'),
             h('atom-btn', {
               attrs: {
-                type: 'primary',
                 actionStyle: this._submitBtn && this._submitBtn.actionStyle
               },
-              style: this._submitBtn && this._submitBtn.style ? `max-height: 39px; font-size: 16px; ${(this._submitBtn.style)}` : 'border: none; height: 39px; font-size: 16px;',
+              style: this._submitBtn && isObject(this._submitBtn.style) ? objAssign(_defaultSubmit, this._submitBtn.style) : _defaultSubmit,
               nativeOn: {
                 click: () => {
                   this.isShow = false;
