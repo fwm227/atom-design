@@ -2,6 +2,7 @@ import './style.css';
 import atomBtn from '../button';
 import atomPopup from '../common/mixin/popup';
 import {scaleTransition} from '../common/transition';
+import typeEqual from '../common/util/typeEqual';
 
 export default {
   name: 'atom-dialog',
@@ -32,6 +33,16 @@ export default {
         }
       }
     });
+    // initial button style
+    let _cancelBtnStyle = Object.create(null);
+    let _submitBtnStyle = Object.create(null);
+
+    if (this._cancelBtn && typeEqual(this._cancelBtn.style, 'Object')) _cancelBtnStyle = this._cancelBtn.style;
+    _cancelBtnStyle['line-height'] = '28px';
+
+    if (this._submitBtn && typeEqual(this._submitBtn.style, 'Object')) _submitBtnStyle = this._submitBtn.style;
+    _submitBtnStyle['line-height'] = '28px';
+    _submitBtnStyle['color'] = '#108ee9';
 
     const cancelBtn = h('atom-btn', {
       attrs: {
@@ -39,9 +50,8 @@ export default {
         size: 'large',
         actionStyle: this._cancelBtn && this._cancelBtn.actionStyle
       },
-      style: (this._cancelBtn && Object.assign({
-        'line-height': '28px'
-      }, this._cancelBtn.style)),
+      staticClass: 'dialog-btn',
+      style: _cancelBtnStyle,
       nativeOn: {
         click: () => {
           this.close();
@@ -54,10 +64,7 @@ export default {
         size: 'large',
         actionStyle: this._submitBtn && this._submitBtn.actionStyle
       },
-      style: (this._submitBtn && Object.assign({
-        'line-height': '28px',
-        'color': '#108ee9'
-      }, this._submitBtn.style)),
+      style: _submitBtnStyle,
       nativeOn: {
         click: () => {
           this.close();
