@@ -91,7 +91,7 @@ var _default = {
         placeholder: this.placeholder
       },
       class: ['input-bar', this.alignClass],
-      style: this.inputStyle,
+      style: isObject(this.inputStyle) && this.inputStyle,
       on: {
         input: function input() {
           _this.innerValue = event.target.value;

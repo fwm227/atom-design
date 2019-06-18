@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _vue = _interopRequireDefault(require("vue"));
 
-var _typeEqual = _interopRequireDefault(require("../common/util/typeEqual.js"));
+var _isObject = _interopRequireDefault(require("../common/util/isObject.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41,7 +41,7 @@ function Dialog(options) {
 }
 
 Dialog.alert = function (title, desc, options) {
-  if (!(0, _typeEqual.default)(options, 'Object')) options = Object.create(null);
+  if (!(0, _isObject.default)(options)) options = Object.create(null);
   options.isCancel = false;
   options.isInput = false;
   options.title = title;
@@ -50,7 +50,7 @@ Dialog.alert = function (title, desc, options) {
 };
 
 Dialog.confirm = function (title, desc, options) {
-  if (!(0, _typeEqual.default)(options, 'Object')) options = Object.create(null);
+  if (!(0, _isObject.default)(options)) options = Object.create(null);
   options.isCancel = true;
   options.isInput = false;
   options.title = title;
@@ -59,7 +59,7 @@ Dialog.confirm = function (title, desc, options) {
 };
 
 Dialog.prompt = function (title, desc, options) {
-  if (!(0, _typeEqual.default)(options, 'Object')) options = Object.create(null);
+  if (!(0, _isObject.default)(options)) options = Object.create(null);
   options.isCancel = true;
   options.isInput = true;
   options.title = title;

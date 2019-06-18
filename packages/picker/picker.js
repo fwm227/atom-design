@@ -93,12 +93,12 @@ export default {
     const _defaultCancel = {
       'max-height': '39px',
       'font-size': '16px'
-    }
+    };
     const _defaultSubmit = {
       'max-height': '39px',
       'font-size': '16px',
       'color': '#108ee9'
-    }
+    };
 
     return h('div', {
       staticClass: 'atom-picker',

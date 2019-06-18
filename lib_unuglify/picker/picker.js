@@ -15,6 +15,10 @@ var _transition = require("../common/transition");
 
 var _pickerColumn = _interopRequireDefault(require("./pickerColumn.js"));
 
+var _isObject = _interopRequireDefault(require("../common/util/isObject"));
+
+var _objAssign = _interopRequireDefault(require("../common/util/objAssign"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = {
@@ -116,6 +120,16 @@ var _default = {
   render: function render(h) {
     var _this4 = this;
 
+    // init button-style
+    var _defaultCancel = {
+      'max-height': '39px',
+      'font-size': '16px'
+    };
+    var _defaultSubmit = {
+      'max-height': '39px',
+      'font-size': '16px',
+      'color': '#108ee9'
+    };
     return h('div', {
       staticClass: 'atom-picker',
       on: {
@@ -140,7 +154,7 @@ var _default = {
       attrs: {
         actionStyle: this._cancelBtn && this._cancelBtn.actionStyle
       },
-      style: this._cancelBtn && this._cancelBtn.style ? "max-height: 39px; font-size: 16px; ".concat(this._cancelBtn.style) : 'border: none; height: 39px; font-size: 16px;',
+      style: this._cancelBtn && (0, _isObject.default)(this._cancelBtn.style) ? (0, _objAssign.default)(_defaultCancel, this._cancelBtn.style) : _defaultCancel,
       nativeOn: {
         click: function click() {
           _this4.isShow = false;
@@ -149,10 +163,9 @@ var _default = {
       }
     }, this._cancelBtn && this._cancelBtn.text ? this._cancelBtn.text : 'Cancel'), h('atom-btn', {
       attrs: {
-        type: 'primary',
         actionStyle: this._submitBtn && this._submitBtn.actionStyle
       },
-      style: this._submitBtn && this._submitBtn.style ? "max-height: 39px; font-size: 16px; ".concat(this._submitBtn.style) : 'border: none; height: 39px; font-size: 16px;',
+      style: this._submitBtn && (0, _isObject.default)(this._submitBtn.style) ? (0, _objAssign.default)(_defaultSubmit, this._submitBtn.style) : _defaultSubmit,
       nativeOn: {
         click: function click() {
           _this4.isShow = false;

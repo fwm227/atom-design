@@ -38,11 +38,11 @@ export default {
     // init button-style
     const _defaultCancel = {
       'line-height': '28px'
-    }
+    };
     const _defaultSubmit = {
       'line-height': '28px',
       'color': '#108ee9'
-    }
+    };
 
     const cancelBtn = h('atom-btn', {
       attrs: {

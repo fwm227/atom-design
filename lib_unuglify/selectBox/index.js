@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _vue = _interopRequireDefault(require("vue"));
 
-var _typeEqual = _interopRequireDefault(require("../common/util/typeEqual.js"));
+var _isObject = _interopRequireDefault(require("../common/util/isObject.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23,7 +23,7 @@ SelectBoxClass.prototype.show = function (options) {
 };
 
 function selectBox(options, fn) {
-  if (!(0, _typeEqual.default)(options, 'Object')) options = Object.create(null);
+  if (!(0, _isObject.default)(options)) options = Object.create(null);
   var selectBoxInstance = new SelectBoxClass({
     el: document.createElement('div')
   });

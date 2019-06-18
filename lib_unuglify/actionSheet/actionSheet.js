@@ -11,6 +11,8 @@ var _popup = _interopRequireDefault(require("../common/mixin/popup"));
 
 var _transition = require("../common/transition");
 
+var _isObject = _interopRequireDefault(require("../common/util/isObject"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = {
@@ -40,7 +42,7 @@ var _default = {
     }, [this._actionList && this._actionList.map(function (el, index) {
       return h('li', {
         staticClass: 'action-sheet-item',
-        style: el.style,
+        style: (0, _isObject.default)(el.style) && el.style,
         on: {
           click: function click() {
             _this._callback && _this._callback(el.text, index);
@@ -49,7 +51,7 @@ var _default = {
       }, el.text);
     })].concat([this._cancelBtn && h('div', {
       staticClass: 'actionsheet-cancel',
-      style: this._cancelBtn.style,
+      style: (0, _isObject.default)(this._cancelBtn.style) && this._cancelBtn.style,
       on: {
         click: function click() {
           _this.isShow = false;

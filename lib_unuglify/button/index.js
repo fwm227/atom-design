@@ -38,9 +38,7 @@ var _default2 = {
       }
     },
     sizeClass: function sizeClass() {
-      if (this.size === 'large') {
-        return 'btn-large';
-      }
+      if (this.size === 'large') return 'btn-large';
     }
   },
   props: {

@@ -14,7 +14,8 @@ uglifyjs ../lib_unuglify/common/mixin/popup/index.js -o ../lib/common/mixin/popu
 uglifyjs ../lib_unuglify/common/mixin/popup/manager.js -o ../lib/common/mixin/popup/manager.js -c -m
 uglifyjs ../lib_unuglify/common/transition/index.js -o ../lib/common/transition/index.js -c -m
 uglifyjs ../lib_unuglify/common/util/Time.js -o ../lib/common/util/Time.js -c -m
-uglifyjs ../lib_unuglify/common/util/typeEqual.js -o ../lib/common/util/typeEqual.js -c -m
+uglifyjs ../lib_unuglify/common/util/isObject.js -o ../lib/common/util/isObject.js -c -m
+uglifyjs ../lib_unuglify/common/util/objAssign.js -o ../lib/common/util/objAssign.js -c -m
 
 uglifyjs ../lib_unuglify/dialog/dialog.js -o ../lib/dialog/dialog.js -c -m
 uglifyjs ../lib_unuglify/dialog/index.js -o ../lib/dialog/index.js -c -m
