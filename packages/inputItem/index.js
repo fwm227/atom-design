@@ -84,7 +84,7 @@ export default {
           'input-bar',
           this.alignClass
         ],
-        style: this.inputStyle,
+        style: isObject(this.inputStyle) && this.inputStyle,
         on: {
           input: () => {
             this.innerValue = event.target.value;

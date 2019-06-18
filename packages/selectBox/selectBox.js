@@ -2,6 +2,7 @@ import './style.css';
 import atomBtn from '../button';
 import atomPopup from '../common/mixin/popup';
 import {scaleTransition} from '../common/transition';
+import isObject from '../common/util/isObject';
 
 export default {
   name: 'atom-select-box',
@@ -32,7 +33,7 @@ export default {
           this._selectBoxList && this._selectBoxList.map((el, index) => {
             return h('div', {
               staticClass: 'select-item',
-              style: el.style,
+              style: isObject(el.style) && el.style,
               on: {
                 click: () => {
                   this._callback && this._callback(el.text, index);
