@@ -46,7 +46,6 @@ export default {
 
     const cancelBtn = h('atom-btn', {
       attrs: {
-        type: 'default',
         size: 'large',
         actionStyle: this._cancelBtn && this._cancelBtn.actionStyle
       },
