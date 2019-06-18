@@ -43,6 +43,6 @@ You can buy a drink for us If you feel the atom-design is good to use then click
 
 ## :page_facing_up: Licence
 
-MIT
+[MIT](https://opensource.org/licenses/MIT)
 
 Copyright (c) 2019-present, Reming
