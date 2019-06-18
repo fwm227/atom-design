@@ -13,6 +13,8 @@ var _popup = _interopRequireDefault(require("../common/mixin/popup"));
 
 var _transition = require("../common/transition");
 
+var _typeEqual = _interopRequireDefault(require("../common/util/typeEqual"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = {
@@ -49,16 +51,25 @@ var _default = {
           _this.promptValue = event.target.value;
         }
       }
-    });
+    }); // initial button style
+
+    var _cancelBtnStyle = Object.create(null);
+
+    var _submitBtnStyle = Object.create(null);
+
+    if (this._cancelBtn && (0, _typeEqual.default)(this._cancelBtn.style, 'Object')) _cancelBtnStyle = this._cancelBtn.style;
+    _cancelBtnStyle['line-height'] = '28px';
+    if (this._submitBtn && (0, _typeEqual.default)(this._submitBtn.style, 'Object')) _submitBtnStyle = this._submitBtn.style;
+    _submitBtnStyle['line-height'] = '28px';
+    _submitBtnStyle['color'] = '#108ee9';
     var cancelBtn = h('atom-btn', {
       attrs: {
         type: 'default',
         size: 'large',
         actionStyle: this._cancelBtn && this._cancelBtn.actionStyle
       },
-      style: this._cancelBtn && Object.assign({
-        'line-height': '28px'
-      }, this._cancelBtn.style),
+      staticClass: 'dialog-btn',
+      style: _cancelBtnStyle,
       nativeOn: {
         click: function click() {
           _this.close();
@@ -72,10 +83,7 @@ var _default = {
         size: 'large',
         actionStyle: this._submitBtn && this._submitBtn.actionStyle
       },
-      style: this._submitBtn && Object.assign({
-        'line-height': '28px',
-        'color': '#108ee9'
-      }, this._submitBtn.style),
+      style: _submitBtnStyle,
       nativeOn: {
         click: function click() {
           _this.close();
