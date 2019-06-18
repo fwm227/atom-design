@@ -2,9 +2,9 @@
 
 # Atom-Design
 
-[![Build Status](https://travis-ci.org/reming0227/atom-design.svg?branch=master)](https://travis-ci.org/reming0227/atom-design) [![Version](https://img.shields.io/badge/npm-1.3.8-blue.svg)](https://www.npmjs.com/package/atom-design) [![Gitter](https://badges.gitter.im/atom_design/AtomDesign.svg)](https://gitter.im/atom_design/AtomDesign?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+Mobile side UI-library base on Vue.js
 
-Mobile side UI-library base on Vue2.0
+[![Build Status](https://travis-ci.org/reming0227/atom-design.svg?branch=master)](https://travis-ci.org/reming0227/atom-design) [![Version](https://img.shields.io/badge/npm-1.3.8-blue.svg)](https://www.npmjs.com/package/atom-design) [![Gitter](https://badges.gitter.im/atom_design/AtomDesign.svg)](https://gitter.im/atom_design/AtomDesign?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## :iphone: Environment Support
 
