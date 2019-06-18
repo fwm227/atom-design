@@ -23,7 +23,7 @@
     border: 1px solid #ccc;
   }
   .radio-input[type=radio]:disabled + .radio-label::before {
-    content: ' ';
+    content: " ";
     position: absolute;
     left: 50%;
     top: 0;
@@ -37,7 +37,7 @@
     background: #108ee9;
   }
   .radio-input[type=radio]:checked + .radio-label::before {
-    content: ' ';
+    content: " ";
     position: absolute;
     top: 4px;
     left: 4px;

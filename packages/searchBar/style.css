@@ -19,7 +19,7 @@
       border: 2px solid #666;
       border-radius: 100%;
       &::after {
-        content: ' ';
+        content: " ";
         position: absolute;
         width: 2px;
         height: 7px;

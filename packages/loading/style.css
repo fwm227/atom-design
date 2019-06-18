@@ -71,7 +71,7 @@
   }
 }
 .atom-loading2::before {
-  content: ' ';
+  content: " ";
   position: absolute;
   left: -25px;
   width: 10px;
@@ -81,7 +81,7 @@
   animation: scaleAnim 500ms linear infinite 250ms alternate;
 }
 .atom-loading2::after {
-  content: ' ';
+  content: " ";
   position: absolute;
   left: -40px;;
   width: 10px;
@@ -113,7 +113,7 @@
   }
 }
 .atom-loading3::before {
-  content: ' ';
+  content: " ";
   position: absolute;
   left: -25px;
   width: 10px;
@@ -123,7 +123,7 @@
   animation: fadeAnim 1s ease infinite 333ms;
 }
 .atom-loading3::after {
-  content: ' ';
+  content: " ";
   position: absolute;
   left: -40px;;
   width: 10px;
@@ -155,7 +155,7 @@
   }
 }
 .atom-loading4::before {
-  content: ' ';
+  content: " ";
   position: absolute;
   left: -25px;
   width: 10px;
@@ -165,7 +165,7 @@
   animation: fadeAndrotateZAnim 1s ease infinite 333ms;
 }
 .atom-loading4::after {
-  content: ' ';
+  content: " ";
   position: absolute;
   left: -40px;;
   width: 10px;
@@ -199,7 +199,7 @@
   }
 }
 .atom-loading5::before {
-  content: ' ';
+  content: " ";
   position: absolute;
   left: -25px;
   width: 10px;
@@ -209,7 +209,7 @@
   animation: fadeAndrotateYAnim 1s ease infinite 333ms;
 }
 .atom-loading5::after {
-  content: ' ';
+  content: " ";
   position: absolute;
   left: -40px;;
   width: 10px;
@@ -243,7 +243,7 @@
   }
 }
 .atom-loading6::before {
-  content: ' ';
+  content: " ";
   position: absolute;
   left: -25px;
   width: 10px;
@@ -253,7 +253,7 @@
   animation: fadeAndrotateXAnim 1s ease infinite 333ms;
 }
 .atom-loading6::after {
-  content: ' ';
+  content: " ";
   position: absolute;
   left: -40px;;
   width: 10px;
@@ -287,7 +287,7 @@
   }
 }
 .atom-loading7::before {
-  content: ' ';
+  content: " ";
   position: absolute;
   left: -25px;
   width: 10px;
@@ -297,7 +297,7 @@
   animation: scaleAnim 500ms ease infinite 250ms alternate;
 }
 .atom-loading7::after {
-  content: ' ';
+  content: " ";
   position: absolute;
   left: -40px;;
   width: 10px;

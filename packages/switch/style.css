@@ -15,7 +15,7 @@
     border-radius: 15px;
     background: #ddd;
     &::before, &::after {
-      content: ' ';
+      content: " ";
       position: absolute;
       border-radius: 13px;
       transition: all 0.25s;
