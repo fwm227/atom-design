@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import typeEqual from '../common/util/typeEqual.js';
+import isObject from '../common/util/isObject.js';
 
 const AtionSheetClass = Vue.extend(require('./actionSheet.js').default);
 
@@ -15,7 +15,7 @@ AtionSheetClass.prototype.show = function (options) {
   this.isShow = true;
 };
 function actionSheet (options, fn) {
-  if (!typeEqual(options, 'Object')) options = Object.create(null);
+  if (!isObject(options)) options = Object.create(null);
   const actionSheetInstance = new AtionSheetClass({el: document.createElement('div')});
   actionSheetInstance.config(options, fn);
   actionSheetInstance.show();

@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import typeEqual from '../common/util/typeEqual.js';
+import isObject from '../common/util/isObject.js';
 
 const DialogClass = Vue.extend(require('./dialog.js').default);
 // config dialog
@@ -25,7 +25,7 @@ function Dialog (options) {
   dialogInstance.show();
 }
 Dialog.alert = function (title, desc, options) {
-  if (!typeEqual(options, 'Object')) options = Object.create(null);
+  if (!isObject(options)) options = Object.create(null);
   options.isCancel = false;
   options.isInput = false;
   options.title = title;
@@ -33,7 +33,7 @@ Dialog.alert = function (title, desc, options) {
   return Dialog(options);
 };
 Dialog.confirm = function (title, desc, options) {
-  if (!typeEqual(options, 'Object')) options = Object.create(null);
+  if (!isObject(options)) options = Object.create(null);
   options.isCancel = true;
   options.isInput = false;
   options.title = title;
@@ -41,7 +41,7 @@ Dialog.confirm = function (title, desc, options) {
   return Dialog(options);
 };
 Dialog.prompt = function (title, desc, options) {
-  if (!typeEqual(options, 'Object')) options = Object.create(null);
+  if (!isObject(options)) options = Object.create(null);
   options.isCancel = true;
   options.isInput = true;
   options.title = title;
