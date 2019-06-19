@@ -1,5 +1,6 @@
 import './style.css';
 import clearIcon from '../common/icon/clearIcon';
+import isObject from '../common/util/isObject';
 
 export default {
   name: 'atom-input-item',
