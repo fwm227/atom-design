@@ -9,6 +9,8 @@ require("./style.css");
 
 var _clearIcon = _interopRequireDefault(require("../common/icon/clearIcon"));
 
+var _isObject = _interopRequireDefault(require("../common/util/isObject"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = {
@@ -91,7 +93,7 @@ var _default = {
         placeholder: this.placeholder
       },
       class: ['input-bar', this.alignClass],
-      style: isObject(this.inputStyle) && this.inputStyle,
+      style: (0, _isObject.default)(this.inputStyle) && this.inputStyle,
       on: {
         input: function input() {
           _this.innerValue = event.target.value;
