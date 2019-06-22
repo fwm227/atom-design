@@ -68,11 +68,11 @@ export default {
             this.active_move = ((moveX / event.currentTarget.parentNode.offsetWidth) * 100 + this.pre_move).toFixed(0);
             if (this.active_move < 0) this.active_move = 0;
             else if (this.active_move > 100) this.active_move = 100;
-            this.$emit('input', Number((this.min + this.active_move * 1e-2 * (this.max - this.min)).toFixed(0)));
           },
           touchend: () => {
             this.pre_move = Number(this.active_move);
             this.isAction = false;
+            this.$emit('input', Number((this.min + this.active_move * 1e-2 * (this.max - this.min)).toFixed(0)));
           }
         }
       }),
