@@ -57,6 +57,8 @@ export default {
               if (lock) return;
               if (this.moveY > 0) {
                 if (this.action === 'pullup') return;
+                // prevent default-action of browser
+                event.preventDefault();
                 this.$slots.promptTop !== void 0 ? this.promptHeight = eventTarget.children.item(0).offsetHeight : console.warn('expect a promptTop slot, but not found!');
               } else if (this.moveY < 0) {
                 if (this.action === 'pulldown') return;
