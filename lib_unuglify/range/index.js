@@ -74,12 +74,12 @@ var _default = {
           var moveX = event.changedTouches[0].pageX - _this.startX;
           _this.active_move = (moveX / event.currentTarget.parentNode.offsetWidth * 100 + _this.pre_move).toFixed(0);
           if (_this.active_move < 0) _this.active_move = 0;else if (_this.active_move > 100) _this.active_move = 100;
-
-          _this.$emit('input', Number((_this.min + _this.active_move * 1e-2 * (_this.max - _this.min)).toFixed(0)));
         },
         touchend: function touchend() {
           _this.pre_move = Number(_this.active_move);
           _this.isAction = false;
+
+          _this.$emit('input', Number((_this.min + _this.active_move * 1e-2 * (_this.max - _this.min)).toFixed(0)));
         }
       }
     }), h('div', {
