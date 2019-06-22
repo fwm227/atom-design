@@ -7,10 +7,12 @@ export default {
       preMoveX: 0,
       tempMoveX: 0,
       touchStartX: 0,
+      touchStartY: 0,
       activeIdx: 0,
       timer: null,
       length: null,
-      isMounted: false
+      isMounted: false,
+      canMove: true
     };
   },
   props: {
@@ -147,14 +149,27 @@ export default {
         staticClass: 'atom-carousel-wrapper',
         on: {
           touchstart: () => {
-            if (this.isLock) return;
+            if (this.isLock || !this.canMove) return;
             this.touchStartX = event.targetTouches[0].pageX;
+            this.touchStartY = event.targetTouches[0].pageY;
           },
           touchmove: () => {
             if (this.isLock) return;
             const carouselDom = event.currentTarget;
             const touchEndX = event.changedTouches[0].pageX;
+
             this.tempMoveX = touchEndX - this.touchStartX;
+            // handle native-scroll
+            const moveY = event.changedTouches[0].pageY - this.touchStartY;
+            const absMoveX = Math.abs(this.tempMoveX);
+            if (absMoveX < 5 || (absMoveX >= 5 && moveY >= 1.73 * absMoveX)) {
+              this.canMove = false;
+              return;
+            } else {
+              this.canMove = true;
+              event.preventDefault();
+            }
+
             const moveX = this.tempMoveX + this.preMoveX;
             // handle unloop
             if (!this.loop && (moveX > 0 || Math.abs(moveX) > carouselDom.offsetWidth * (carouselList.length - 1))) {
@@ -164,10 +179,10 @@ export default {
             // handle loop
             if (this.loop) this.handleLoop(moveX);
 
-            carouselDom.style.transform = `translate3d(${moveX.toFixed(0)}px, 0, 0)`;
+            carouselDom.style.transform = `translate3d(${moveX.toFixed(2)}px, 0, 0)`;
           },
           touchend: () => {
-            if (this.isLock) return;
+            if (this.isLock || !this.canMove) return;
             // fix click bug
             if (!this.tempMoveX) return;
             const carouselDom = event.currentTarget;
