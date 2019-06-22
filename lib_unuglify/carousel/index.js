@@ -208,9 +208,7 @@ var _default = {
           carouselDom.style.transform = "translate3d(".concat(moveX.toFixed(2), "px, 0, 0)");
         },
         touchend: function touchend() {
-          if (_this3.isLock || !_this3.canMove) return; // fix click bug
-
-          if (!_this3.tempMoveX) return;
+          if (_this3.isLock || !_this3.canMove) return;
           var carouselDom = event.currentTarget;
           var animWidth = Math.abs(_this3.tempMoveX) > carouselDom.offsetWidth / 2 ? _this3.tempMoveX > 0 ? _this3.preMoveX + carouselDom.offsetWidth : _this3.preMoveX - carouselDom.offsetWidth : _this3.preMoveX; // handle pagination
 
