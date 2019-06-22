@@ -6,6 +6,7 @@ export default {
     return {
       startX: 0,
       pre_move: 0,
+      anim_move: 0,
       active_move: 0,
       isAction: false
     };
@@ -53,7 +54,7 @@ export default {
       h('div', {
         staticClass: 'active-slider',
         style: {
-          left: `${this.active_move}%`,
+          left: `${this.anim_move}%`,
           background: this.color,
           'box-shadow': `0 0 10px ${this.color}`
         },
@@ -65,7 +66,8 @@ export default {
           touchmove: () => {
             event.preventDefault();
             const moveX = event.changedTouches[0].pageX - this.startX;
-            this.active_move = ((moveX / event.currentTarget.parentNode.offsetWidth) * 100 + this.pre_move).toFixed(0);
+            this.anim_move = (moveX / event.currentTarget.parentNode.offsetWidth) * 100 + this.pre_move;
+            this.active_move = this.anim_move.toFixed(0);
             if (this.active_move < 0) this.active_move = 0;
             else if (this.active_move > 100) this.active_move = 100;
           },

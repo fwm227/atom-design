@@ -179,7 +179,7 @@ export default {
             // handle loop
             if (this.loop) this.handleLoop(moveX);
 
-            carouselDom.style.transform = `translate3d(${moveX.toFixed(2)}px, 0, 0)`;
+            carouselDom.style.transform = `translate3d(${moveX}px, 0, 0)`;
           },
           touchend: () => {
             if (this.isLock || !this.canMove) return;

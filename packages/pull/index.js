@@ -45,15 +45,33 @@ export default {
           on: {
             touchstart: () => {
               this.startY = event.targetTouches[0].pageY;
-              if (lock && ((this.action !== 'pullup' && this.$el.scrollTop === 0 && this.moveY > 0) || (this.action !== 'pulldown' && this.$el.scrollTop + this.$el.clientHeight === this.$el.scrollHeight && this.moveY < 0))) lock = false;
+              if (lock &&
+                ((this.action !== 'pullup' &&
+                  this.$el.scrollTop === 0 &&
+                  this.moveY > 5) ||
+                (this.action !== 'pulldown' &&
+                  this.$el.scrollTop + this.$el.clientHeight === this.$el.scrollHeight &&
+                  this.moveY < 0))
+              ) lock = false;
+              this.moveY = 0;
             },
             touchmove: () => {
               const eventTarget = event.currentTarget;
               const scrollYStyle = document.defaultView.getComputedStyle(this.$el).overflowY;
               // handle move
               this.moveY = event.changedTouches[0].pageY - this.startY;
+
               // lock scroll
-              if (!lock && (scrollYStyle === 'auto' || scrollYStyle === 'scroll') && ((this.$el.scrollTop === 0 && this.moveY < 0) || (this.$el.scrollTop && this.$el.scrollTop + this.$el.clientHeight < this.$el.scrollHeight) || (this.$el.scrollTop + this.$el.clientHeight === this.$el.scrollHeight && this.moveY > 0))) lock = true;
+              if (!lock &&
+                (scrollYStyle === 'auto' ||
+                  scrollYStyle === 'scroll') &&
+                ((this.$el.scrollTop === 0 &&
+                  this.moveY < 5) ||
+                (this.$el.scrollTop &&
+                  this.$el.scrollTop + this.$el.clientHeight < this.$el.scrollHeight) ||
+                (this.$el.scrollTop + this.$el.clientHeight === this.$el.scrollHeight &&
+                  this.moveY > 0))
+              ) lock = true;
               if (lock) return;
               if (this.moveY > 0) {
                 if (this.action === 'pullup') return;
@@ -73,10 +91,10 @@ export default {
               Math.abs(this.moveY) > this.promptHeight && this.$emit('promptDisplay');
               const maxMove = this.moveY > 0 ? this.maxTopMove : this.maxBotMove;
               if (Math.abs(this.moveY) > maxMove) return;
-              eventTarget.style.transform = `translate3d(0, ${this.moveY.toFixed(0)}px, 0)`;
+              eventTarget.style.transform = `translate3d(0, ${this.moveY}px, 0)`;
             },
             touchend: () => {
-              if (lock) return;
+              if (lock || Math.abs(this.moveY) < 5) return;
               const eventTarget = event.currentTarget;
               let time = this.delay;
               (Math.abs(this.moveY) > this.promptHeight) ? this.$emit('touchEnd') : time = 0;

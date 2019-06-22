@@ -67,7 +67,7 @@ export default {
             if ((this.tempMoveX < 0 && Math.abs(this.tempMoveX) >= rightActionDom.offsetWidth) || (this.tempMoveX > 0 && Math.abs(this.tempMoveX) >= leftActionDom.offsetWidth)) return;
             if (this.$slots.leftAction === void 0 && this.tempMoveX > 0) return;
             else if (this.$slots.rightAction === void 0 && this.tempMoveX < 0) return;
-            slideDom.style.transform = `translate3d(${this.tempMoveX.toFixed(0)}px, 0, 0)`;
+            slideDom.style.transform = `translate3d(${this.tempMoveX}px, 0, 0)`;
           },
           touchend: () => {
             if (!this.tempMoveX) return;
