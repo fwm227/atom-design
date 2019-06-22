@@ -183,8 +183,7 @@ export default {
           },
           touchend: () => {
             if (this.isLock || !this.canMove) return;
-            // fix click bug
-            if (!this.tempMoveX) return;
+
             const carouselDom = event.currentTarget;
             let animWidth = Math.abs(this.tempMoveX) > carouselDom.offsetWidth / 2 ? this.tempMoveX > 0 ? this.preMoveX + carouselDom.offsetWidth : this.preMoveX - carouselDom.offsetWidth : this.preMoveX;
             // handle pagination

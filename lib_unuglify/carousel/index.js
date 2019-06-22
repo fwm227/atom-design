@@ -14,10 +14,12 @@ var _default = {
       preMoveX: 0,
       tempMoveX: 0,
       touchStartX: 0,
+      touchStartY: 0,
       activeIdx: 0,
       timer: null,
       length: null,
-      isMounted: false
+      isMounted: false,
+      canMove: true
     };
   },
   props: {
@@ -173,14 +175,27 @@ var _default = {
       staticClass: 'atom-carousel-wrapper',
       on: {
         touchstart: function touchstart() {
-          if (_this3.isLock) return;
+          if (_this3.isLock || !_this3.canMove) return;
           _this3.touchStartX = event.targetTouches[0].pageX;
+          _this3.touchStartY = event.targetTouches[0].pageY;
         },
         touchmove: function touchmove() {
           if (_this3.isLock) return;
           var carouselDom = event.currentTarget;
           var touchEndX = event.changedTouches[0].pageX;
-          _this3.tempMoveX = touchEndX - _this3.touchStartX;
+          _this3.tempMoveX = touchEndX - _this3.touchStartX; // handle native-scroll
+
+          var moveY = event.changedTouches[0].pageY - _this3.touchStartY;
+          var absMoveX = Math.abs(_this3.tempMoveX);
+
+          if (absMoveX < 5 || absMoveX >= 5 && moveY >= 1.73 * absMoveX) {
+            _this3.canMove = false;
+            return;
+          } else {
+            _this3.canMove = true;
+            event.preventDefault();
+          }
+
           var moveX = _this3.tempMoveX + _this3.preMoveX; // handle unloop
 
           if (!_this3.loop && (moveX > 0 || Math.abs(moveX) > carouselDom.offsetWidth * (carouselList.length - 1))) {
@@ -190,10 +205,10 @@ var _default = {
 
 
           if (_this3.loop) _this3.handleLoop(moveX);
-          carouselDom.style.transform = "translate3d(".concat(moveX.toFixed(0), "px, 0, 0)");
+          carouselDom.style.transform = "translate3d(".concat(moveX.toFixed(2), "px, 0, 0)");
         },
         touchend: function touchend() {
-          if (_this3.isLock) return; // fix click bug
+          if (_this3.isLock || !_this3.canMove) return; // fix click bug
 
           if (!_this3.tempMoveX) return;
           var carouselDom = event.currentTarget;

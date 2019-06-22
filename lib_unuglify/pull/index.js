@@ -68,7 +68,10 @@ var _default = {
           if (lock) return;
 
           if (_this.moveY > 0) {
-            if (_this.action === 'pullup') return;
+            if (_this.action === 'pullup') return; // prevent default-action of browser
+
+            event.preventDefault();
+            event.stopPropagation();
             _this.$slots.promptTop !== void 0 ? _this.promptHeight = eventTarget.children.item(0).offsetHeight : console.warn('expect a promptTop slot, but not found!');
           } else if (_this.moveY < 0) {
             if (_this.action === 'pulldown') return;
