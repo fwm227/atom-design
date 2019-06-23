@@ -205,7 +205,7 @@ var _default = {
 
 
           if (_this3.loop) _this3.handleLoop(moveX);
-          carouselDom.style.transform = "translate3d(".concat(moveX.toFixed(2), "px, 0, 0)");
+          carouselDom.style.transform = "translate3d(".concat(moveX, "px, 0, 0)");
         },
         touchend: function touchend() {
           if (_this3.isLock || !_this3.canMove) return;

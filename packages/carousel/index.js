@@ -73,31 +73,35 @@ export default {
       if (!isInit) carouselDom.style['transition-duration'] = `${this.duration}ms`;
       carouselDom.style.transform = `translate3d(${this.preMoveX}px, 0, 0)`;
     },
+    startAnim () {
+      clearTimeout(this.timer);
+      if (this.auto) this.animation();
+    },
     initAutoAnim () {
+      this.startAnim();
+    },
+    animation () {
       const carouselDom = this.$el.children.item(0);
-      clearInterval(this.timer);
-      if (this.auto) {
-        this.timer = setInterval(() => {
-          let moveX;
-          const compareMovex = this.preMoveX - carouselDom.offsetWidth;
-          if (this.loop) {
-            this.handleLoop(compareMovex);
-            moveX = this.preMoveX - carouselDom.offsetWidth;
-          } else if (Math.abs(compareMovex) > carouselDom.offsetWidth * (this.length - 1)) {
-            this.preMoveX = 0;
-            moveX = 0;
-          } else {
-            moveX = this.preMoveX - carouselDom.offsetWidth;
-          }
-          // handle pagination
-          this.activeIdx = Math.abs(moveX) / carouselDom.offsetWidth;
-          if (this.loop && this.activeIdx >= (this.length - 1)) this.activeIdx = 0;
-          // animation config
-          carouselDom.style['transition-duration'] = `${this.duration}ms`;
-          carouselDom.style.transform = `translate3d(${moveX}px, 0, 0)`;
-          this.listenAnimEnd(moveX);
-        }, this.time);
-      }
+      this.timer = setTimeout(() => {
+        let moveX;
+        const compareMovex = this.preMoveX - carouselDom.offsetWidth;
+        if (this.loop) {
+          this.handleLoop(compareMovex);
+          moveX = this.preMoveX - carouselDom.offsetWidth;
+        } else if (Math.abs(compareMovex) > carouselDom.offsetWidth * (this.length - 1)) {
+          this.preMoveX = 0;
+          moveX = 0;
+        } else {
+          moveX = this.preMoveX - carouselDom.offsetWidth;
+        }
+        // handle pagination
+        this.activeIdx = Math.abs(moveX) / carouselDom.offsetWidth;
+        if (this.loop && this.activeIdx >= (this.length - 1)) this.activeIdx = 0;
+        // animation config
+        carouselDom.style['transition-duration'] = `${this.duration}ms`;
+        carouselDom.style.transform = `translate3d(${moveX}px, 0, 0)`;
+        this.listenAnimEnd(moveX);
+      }, this.time);
     },
     handleLoop (moveX) {
       const carouselDom = this.$el.children.item(0);
@@ -114,6 +118,7 @@ export default {
         this.preMoveX = animWidth;
         this.tempMoveX = 0;
         carouselDom.style['transition-duration'] = '0ms';
+        this.startAnim();
       }, {capture: false, once: true});
     }
   },
@@ -149,6 +154,7 @@ export default {
         staticClass: 'atom-carousel-wrapper',
         on: {
           touchstart: () => {
+            if (this.timer) clearTimeout(this.timer);
             if (this.isLock || !this.canMove) return;
             this.touchStartX = event.targetTouches[0].pageX;
             this.touchStartY = event.targetTouches[0].pageY;
@@ -164,12 +170,11 @@ export default {
             const absMoveX = Math.abs(this.tempMoveX);
             if (absMoveX < 5 || (absMoveX >= 5 && moveY >= 1.73 * absMoveX)) {
               this.canMove = false;
-              return;
-            } else {
+            } else if (event.cancelable) {
               this.canMove = true;
               event.preventDefault();
             }
-
+            if (!this.canMove) return;
             const moveX = this.tempMoveX + this.preMoveX;
             // handle unloop
             if (!this.loop && (moveX > 0 || Math.abs(moveX) > carouselDom.offsetWidth * (carouselList.length - 1))) {

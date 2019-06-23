@@ -13,6 +13,7 @@ var _default = {
     return {
       startX: 0,
       pre_move: 0,
+      anim_move: 0,
       active_move: 0,
       isAction: false
     };
@@ -60,7 +61,7 @@ var _default = {
     }), h('div', {
       staticClass: 'active-slider',
       style: {
-        left: "".concat(this.active_move, "%"),
+        left: "".concat(this.anim_move, "%"),
         background: this.color,
         'box-shadow': "0 0 10px ".concat(this.color)
       },
@@ -72,7 +73,8 @@ var _default = {
         touchmove: function touchmove() {
           event.preventDefault();
           var moveX = event.changedTouches[0].pageX - _this.startX;
-          _this.active_move = (moveX / event.currentTarget.parentNode.offsetWidth * 100 + _this.pre_move).toFixed(0);
+          _this.anim_move = moveX / event.currentTarget.parentNode.offsetWidth * 100 + _this.pre_move;
+          _this.active_move = _this.anim_move.toFixed(0);
           if (_this.active_move < 0) _this.active_move = 0;else if (_this.active_move > 100) _this.active_move = 100;
         },
         touchend: function touchend() {

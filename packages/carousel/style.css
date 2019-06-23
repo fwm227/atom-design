@@ -32,7 +32,7 @@
       opacity: 0.6;
     }
     .point.is-active {
-      background: #007aff;
+      background: #f0f1f2;
     }
   }
 }

@@ -56,7 +56,8 @@ var _default = {
       on: {
         touchstart: function touchstart() {
           _this.startY = event.targetTouches[0].pageY;
-          if (lock && (_this.action !== 'pullup' && _this.$el.scrollTop === 0 && _this.moveY > 0 || _this.action !== 'pulldown' && _this.$el.scrollTop + _this.$el.clientHeight === _this.$el.scrollHeight && _this.moveY < 0)) lock = false;
+          if (lock && (_this.action !== 'pullup' && _this.$el.scrollTop === 0 && _this.moveY > 5 || _this.action !== 'pulldown' && _this.$el.scrollTop + _this.$el.clientHeight === _this.$el.scrollHeight && _this.moveY < 0)) lock = false;
+          _this.moveY = 0;
         },
         touchmove: function touchmove() {
           var eventTarget = event.currentTarget;
@@ -64,7 +65,7 @@ var _default = {
 
           _this.moveY = event.changedTouches[0].pageY - _this.startY; // lock scroll
 
-          if (!lock && (scrollYStyle === 'auto' || scrollYStyle === 'scroll') && (_this.$el.scrollTop === 0 && _this.moveY < 0 || _this.$el.scrollTop && _this.$el.scrollTop + _this.$el.clientHeight < _this.$el.scrollHeight || _this.$el.scrollTop + _this.$el.clientHeight === _this.$el.scrollHeight && _this.moveY > 0)) lock = true;
+          if (!lock && (scrollYStyle === 'auto' || scrollYStyle === 'scroll') && (_this.$el.scrollTop === 0 && _this.moveY < 5 || _this.$el.scrollTop && _this.$el.scrollTop + _this.$el.clientHeight < _this.$el.scrollHeight || _this.$el.scrollTop + _this.$el.clientHeight === _this.$el.scrollHeight && _this.moveY > 0)) lock = true;
           if (lock) return;
 
           if (_this.moveY > 0) {
@@ -87,10 +88,10 @@ var _default = {
           Math.abs(_this.moveY) > _this.promptHeight && _this.$emit('promptDisplay');
           var maxMove = _this.moveY > 0 ? _this.maxTopMove : _this.maxBotMove;
           if (Math.abs(_this.moveY) > maxMove) return;
-          eventTarget.style.transform = "translate3d(0, ".concat(_this.moveY.toFixed(0), "px, 0)");
+          eventTarget.style.transform = "translate3d(0, ".concat(_this.moveY, "px, 0)");
         },
         touchend: function touchend() {
-          if (lock) return;
+          if (lock || Math.abs(_this.moveY) < 5) return;
           var eventTarget = event.currentTarget;
           var time = _this.delay;
           Math.abs(_this.moveY) > _this.promptHeight ? _this.$emit('touchEnd') : time = 0;

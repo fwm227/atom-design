@@ -80,7 +80,7 @@ var _default = {
           _this2.tempMoveX = _this2.moveX + _this2.preMoveX;
           if (_this2.tempMoveX < 0 && Math.abs(_this2.tempMoveX) >= rightActionDom.offsetWidth || _this2.tempMoveX > 0 && Math.abs(_this2.tempMoveX) >= leftActionDom.offsetWidth) return;
           if (_this2.$slots.leftAction === void 0 && _this2.tempMoveX > 0) return;else if (_this2.$slots.rightAction === void 0 && _this2.tempMoveX < 0) return;
-          slideDom.style.transform = "translate3d(".concat(_this2.tempMoveX.toFixed(0), "px, 0, 0)");
+          slideDom.style.transform = "translate3d(".concat(_this2.tempMoveX, "px, 0, 0)");
         },
         touchend: function touchend() {
           if (!_this2.tempMoveX) return;
