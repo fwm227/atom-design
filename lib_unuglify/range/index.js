@@ -74,8 +74,8 @@ var _default = {
           event.preventDefault();
           var moveX = event.changedTouches[0].pageX - _this.startX;
           _this.anim_move = moveX / event.currentTarget.parentNode.offsetWidth * 100 + _this.pre_move;
+          if (_this.anim_move < 0) _this.anim_move = 0;else if (_this.anim_move > 100) _this.anim_move = 100;
           _this.active_move = _this.anim_move.toFixed(0);
-          if (_this.active_move < 0) _this.active_move = 0;else if (_this.active_move > 100) _this.active_move = 100;
         },
         touchend: function touchend() {
           _this.pre_move = Number(_this.active_move);

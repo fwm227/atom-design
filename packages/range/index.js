@@ -67,9 +67,9 @@ export default {
             event.preventDefault();
             const moveX = event.changedTouches[0].pageX - this.startX;
             this.anim_move = (moveX / event.currentTarget.parentNode.offsetWidth) * 100 + this.pre_move;
+            if (this.anim_move < 0) this.anim_move = 0;
+            else if (this.anim_move > 100) this.anim_move = 100;
             this.active_move = this.anim_move.toFixed(0);
-            if (this.active_move < 0) this.active_move = 0;
-            else if (this.active_move > 100) this.active_move = 100;
           },
           touchend: () => {
             this.pre_move = Number(this.active_move);
