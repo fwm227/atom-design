@@ -80,38 +80,41 @@ var _default = {
       if (!isInit) carouselDom.style['transition-duration'] = "".concat(this.duration, "ms");
       carouselDom.style.transform = "translate3d(".concat(this.preMoveX, "px, 0, 0)");
     },
+    startAnim: function startAnim() {
+      clearTimeout(this.timer);
+      if (this.auto) this.animation();
+    },
     initAutoAnim: function initAutoAnim() {
+      this.startAnim();
+    },
+    animation: function animation() {
       var _this = this;
 
       var carouselDom = this.$el.children.item(0);
-      clearInterval(this.timer);
+      this.timer = setTimeout(function () {
+        var moveX;
+        var compareMovex = _this.preMoveX - carouselDom.offsetWidth;
 
-      if (this.auto) {
-        this.timer = setInterval(function () {
-          var moveX;
-          var compareMovex = _this.preMoveX - carouselDom.offsetWidth;
+        if (_this.loop) {
+          _this.handleLoop(compareMovex);
 
-          if (_this.loop) {
-            _this.handleLoop(compareMovex);
-
-            moveX = _this.preMoveX - carouselDom.offsetWidth;
-          } else if (Math.abs(compareMovex) > carouselDom.offsetWidth * (_this.length - 1)) {
-            _this.preMoveX = 0;
-            moveX = 0;
-          } else {
-            moveX = _this.preMoveX - carouselDom.offsetWidth;
-          } // handle pagination
+          moveX = _this.preMoveX - carouselDom.offsetWidth;
+        } else if (Math.abs(compareMovex) > carouselDom.offsetWidth * (_this.length - 1)) {
+          _this.preMoveX = 0;
+          moveX = 0;
+        } else {
+          moveX = _this.preMoveX - carouselDom.offsetWidth;
+        } // handle pagination
 
 
-          _this.activeIdx = Math.abs(moveX) / carouselDom.offsetWidth;
-          if (_this.loop && _this.activeIdx >= _this.length - 1) _this.activeIdx = 0; // animation config
+        _this.activeIdx = Math.abs(moveX) / carouselDom.offsetWidth;
+        if (_this.loop && _this.activeIdx >= _this.length - 1) _this.activeIdx = 0; // animation config
 
-          carouselDom.style['transition-duration'] = "".concat(_this.duration, "ms");
-          carouselDom.style.transform = "translate3d(".concat(moveX, "px, 0, 0)");
+        carouselDom.style['transition-duration'] = "".concat(_this.duration, "ms");
+        carouselDom.style.transform = "translate3d(".concat(moveX, "px, 0, 0)");
 
-          _this.listenAnimEnd(moveX);
-        }, this.time);
-      }
+        _this.listenAnimEnd(moveX);
+      }, this.time);
     },
     handleLoop: function handleLoop(moveX) {
       var carouselDom = this.$el.children.item(0);
@@ -131,6 +134,8 @@ var _default = {
         _this2.preMoveX = animWidth;
         _this2.tempMoveX = 0;
         carouselDom.style['transition-duration'] = '0ms';
+
+        _this2.startAnim();
       }, {
         capture: false,
         once: true
@@ -175,6 +180,7 @@ var _default = {
       staticClass: 'atom-carousel-wrapper',
       on: {
         touchstart: function touchstart() {
+          if (_this3.timer) clearTimeout(_this3.timer);
           if (_this3.isLock || !_this3.canMove) return;
           _this3.touchStartX = event.targetTouches[0].pageX;
           _this3.touchStartY = event.targetTouches[0].pageY;
@@ -190,12 +196,12 @@ var _default = {
 
           if (absMoveX < 5 || absMoveX >= 5 && moveY >= 1.73 * absMoveX) {
             _this3.canMove = false;
-            return;
-          } else {
+          } else if (event.cancelable) {
             _this3.canMove = true;
             event.preventDefault();
           }
 
+          if (!_this3.canMove) return;
           var moveX = _this3.tempMoveX + _this3.preMoveX; // handle unloop
 
           if (!_this3.loop && (moveX > 0 || Math.abs(moveX) > carouselDom.offsetWidth * (carouselList.length - 1))) {
