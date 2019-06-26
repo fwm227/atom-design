@@ -6,26 +6,26 @@ Mobile side UI-library base on Vue.js
 
 [![Build Status](https://travis-ci.org/reming0227/atom-design.svg?branch=master)](https://travis-ci.org/reming0227/atom-design) [![Version](https://img.shields.io/badge/npm-1.4.2-blue.svg)](https://www.npmjs.com/package/atom-design) [![Gitter](https://badges.gitter.im/atom_design/AtomDesign.svg)](https://gitter.im/atom_design/AtomDesign?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-## :iphone: Environment Support
+## 📱 Environment Support
 
 > not polyfills
 
 * iOS 10.3+
 * Android 6+
 
-## :sparkles: Features
+## ✨ Features
 * Icon drawn by CSS
 * Customizable components style
 * Simple and easy to use components
 
-## :package: Installation
+## 📦 Installation
 
 ```bash
 npm install atom-design --save
 yarn add atom-design
 ```
 
-## :hammer: Usage
+## 🔨 Usage
 
 ```javascript
 import Vue from 'vue'
@@ -34,14 +34,14 @@ import 'atom-design/bundle/style.css'
 Vue.use(atomD)
 ```
 
-## :memo: Documentation
+## 📝 Documentation
 Please click this [Documentation](https://atom-design.github.io/docs/#/)
 
-## :heart: Support Atom-Design
+## ❤ Support Atom-Design
 
 You can buy a drink for us If you feel the atom-design is good to use then click this [Support Atom-Design](https://www.patreon.com/remingchan)
 
-## :page_facing_up: License
+## 📃 License
 
 [MIT](https://opensource.org/licenses/MIT)
 
