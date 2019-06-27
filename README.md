@@ -4,14 +4,14 @@
 
 Mobile side UI-library base on Vue.js
 
-[![Build Status](https://travis-ci.org/reming0227/atom-design.svg?branch=master)](https://travis-ci.org/reming0227/atom-design) [![Version](https://img.shields.io/badge/npm-1.4.2-blue.svg)](https://www.npmjs.com/package/atom-design) [![Gitter](https://badges.gitter.im/atom_design/AtomDesign.svg)](https://gitter.im/atom_design/AtomDesign?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Build Status](https://travis-ci.org/reming0227/atom-design.svg?branch=master)](https://travis-ci.org/reming0227/atom-design) [![Version](https://img.shields.io/badge/npm-1.4.3-blue.svg)](https://www.npmjs.com/package/atom-design) [![Gitter](https://badges.gitter.im/atom_design/AtomDesign.svg)](https://gitter.im/atom_design/AtomDesign?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## 📱 Environment Support
 
 > not polyfills
 
-* iOS 10.3+
-* Android 6+
+* iOS 8+
+* Android 4.4.3+
 
 ## ✨ Features
 * Icon drawn by CSS
