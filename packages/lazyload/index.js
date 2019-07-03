@@ -13,18 +13,18 @@ function getScrollDom () {
 function throttle (fn, delay) {
   var now;
   var preExce = 0;
+  var timer;
   var execute = function () {
     fn.call();
     preExce = now;
   };
   return function () {
     now = Date.now();
-    if (now - preExce > delay) {
-      execute();
-    } else {
-      var timer = setTimeout(function () {
+    now - preExce > delay && execute();
+    if (now - preExce < delay) {
+      clearTimeout(timer);
+      timer = setTimeout(function () {
         execute();
-        clearTimeout(timer);
       }, delay);
     }
   };
