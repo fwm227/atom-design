@@ -37,7 +37,7 @@ Vue.use(atomD)
 ## 📝 Documentation
 Please click this [Documentation](https://atom-design.github.io/docs/#/)
 
-## ♥ Support Atom-Design
+## ❤ Support Atom-Design
 
 You can buy a drink for us If you feel the atom-design is good to use then click this [Support Atom-Design](https://www.patreon.com/remingchan)
 
