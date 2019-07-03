@@ -28,9 +28,10 @@ function throttle(fn, delay) {
 
   return function () {
     now = Date.now();
-    now - preExce > delay && execute();
 
-    if (now - preExce < delay) {
+    if (now - preExce >= delay) {
+      execute();
+    } else {
       clearTimeout(timer);
       timer = setTimeout(function () {
         execute();
