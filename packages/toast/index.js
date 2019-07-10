@@ -33,7 +33,7 @@ function toast (options) {
   var startTimer = setTimeout(function () {
     toastInstance.show();
     clearTimeout(startTimer);
-  }, 0);
+  }, 20);
   var endTimer = setTimeout(function () {
     toastInstance.hidden();
     clearTimeout(endTimer);
