@@ -30,7 +30,6 @@
     height: 10px;
     border-radius: 100%;
     background: #108ee9;
-    box-shadow: 0 0 10px #108ee9;
     border: 3px solid white;
   }
   &.active .range-indicator {

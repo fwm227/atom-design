@@ -30,6 +30,16 @@ export default {
     color: {
       type: String,
       default: '#108ee9'
+    },
+    isLight: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    shadowStyle () {
+      if (this.isLight) return `0 0 10px ${this.color}`;
+      else return `0 0 3px ${this.color}`
     }
   },
   mounted () {
@@ -56,7 +66,7 @@ export default {
         style: {
           left: `${this.anim_move}%`,
           background: this.color,
-          'box-shadow': `0 0 10px ${this.color}`
+          'box-shadow': this.shadowStyle
         },
         on: {
           touchstart: () => {

@@ -1,3 +1,5 @@
+import './style.css';
+
 export default {
   name: 'atom-switch',
   computed: {
