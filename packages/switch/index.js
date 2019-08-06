@@ -1,7 +1,5 @@
-import './style.css';
-
 export default {
-  name: 'atom-switch',
+  name: 'table-switch',
   computed: {
     inner_value: {
       get () {
@@ -29,7 +27,7 @@ export default {
     }
   },
   render (h) {
-    return h('label', {staticClass: 'atom-switch'}, [
+    return h('label', {staticClass: 'table-switch'}, [
       h('input', {
         staticClass: 'switch-input',
         attrs: {

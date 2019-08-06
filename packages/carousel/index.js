@@ -158,6 +158,7 @@ export default {
             if (this.isLock || !this.canMove) return;
             this.touchStartX = event.targetTouches[0].pageX;
             this.touchStartY = event.targetTouches[0].pageY;
+            this.startTime = Date.now();
           },
           touchmove: () => {
             if (this.isLock) return;
@@ -168,7 +169,7 @@ export default {
             // handle native-scroll
             const moveY = event.changedTouches[0].pageY - this.touchStartY;
             const absMoveX = Math.abs(this.tempMoveX);
-            if (absMoveX < 5 || (absMoveX >= 5 && moveY >= 1.73 * absMoveX)) {
+            if (absMoveX < 5 || (absMoveX >= 5 && moveY >= Math.sqrt(3) * absMoveX)) {
               this.canMove = false;
             } else if (event.cancelable) {
               this.canMove = true;
@@ -189,8 +190,11 @@ export default {
           touchend: () => {
             if (this.isLock || !this.canMove) return;
 
+            var endTime = Date.now();
+            var moveSpeed = Math.abs(this.tempMoveX) / (endTime - this.startTime);
+
             const carouselDom = event.currentTarget;
-            let animWidth = Math.abs(this.tempMoveX) > carouselDom.offsetWidth / 2 ? this.tempMoveX > 0 ? this.preMoveX + carouselDom.offsetWidth : this.preMoveX - carouselDom.offsetWidth : this.preMoveX;
+            let animWidth = ((Math.abs(this.tempMoveX) > carouselDom.offsetWidth / 2) || (moveSpeed > 0.5)) ? this.tempMoveX > 0 ? this.preMoveX + carouselDom.offsetWidth : this.preMoveX - carouselDom.offsetWidth : this.preMoveX;
             // handle pagination
             this.activeIdx = Math.abs(animWidth) / carouselDom.offsetWidth;
             if (this.loop && this.activeIdx >= (this.length - 1)) this.activeIdx = 0;
