@@ -22,12 +22,12 @@
   .radio-input[type=radio]:disabled + .radio-label {
     border: 1px solid #ccc;
   }
-  .radio-input[type=radio]:disabled + .radio-label::before {
+  .radio-input[type=radio]:disabled + .radio-label::after {
     content: " ";
     position: absolute;
     left: 50%;
     top: 0;
-    transform: translate3d(-50%, 0, 0) rotate3d(0, 0, 1, -45deg);
+    transform: translate3d(-50%, 0, 0) rotate3d(0, 0, 1, -45deg) scale(1);
     width: 1px;
     height: 100%;
     background: #ccc;
@@ -36,17 +36,21 @@
     border: none;
     background: #108ee9;
   }
-  .radio-input[type=radio]:checked + .radio-label::before {
+  .radio-input[type=radio] + .radio-label::before {
     content: " ";
     position: absolute;
     top: 4px;
     left: 4px;
-    width: 13px;
-    height: 8px;
+    width: 12px;
+    height: 7px;
     border: 2px solid white;
     box-sizing: border-box;
     border-top: none;
     border-right: none;
-    transform: rotate3d(0, 0, 1, -46deg);
+    transform: rotate3d(0, 0, 1, -45deg) scale(0);
+    transition: transform cubic-bezier(0,.35,1,1.92) 0.2s;
+  }
+  .radio-input[type=radio]:checked + .radio-label::before {
+    transform: rotate3d(0, 0, 1, -45deg) scale(1);
   }
 }
