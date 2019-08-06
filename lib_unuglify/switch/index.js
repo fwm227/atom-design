@@ -4,11 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-
-require("./style.css");
-
 var _default = {
-  name: 'atom-switch',
+  name: 'table-switch',
   computed: {
     inner_value: {
       get: function get() {
@@ -39,7 +36,7 @@ var _default = {
     var _this = this;
 
     return h('label', {
-      staticClass: 'atom-switch'
+      staticClass: 'table-switch'
     }, [h('input', {
       staticClass: 'switch-input',
       attrs: {

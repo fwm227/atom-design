@@ -184,6 +184,7 @@ var _default = {
           if (_this3.isLock || !_this3.canMove) return;
           _this3.touchStartX = event.targetTouches[0].pageX;
           _this3.touchStartY = event.targetTouches[0].pageY;
+          _this3.startTime = Date.now();
         },
         touchmove: function touchmove() {
           if (_this3.isLock) return;
@@ -194,7 +195,7 @@ var _default = {
           var moveY = event.changedTouches[0].pageY - _this3.touchStartY;
           var absMoveX = Math.abs(_this3.tempMoveX);
 
-          if (absMoveX < 5 || absMoveX >= 5 && moveY >= 1.73 * absMoveX) {
+          if (absMoveX < 5 || absMoveX >= 5 && moveY >= Math.sqrt(3) * absMoveX) {
             _this3.canMove = false;
           } else if (event.cancelable) {
             _this3.canMove = true;
@@ -215,8 +216,12 @@ var _default = {
         },
         touchend: function touchend() {
           if (_this3.isLock || !_this3.canMove) return;
+          var endTime = Date.now();
+
+          var moveSpeed = Math.abs(_this3.tempMoveX) / (endTime - _this3.startTime);
+
           var carouselDom = event.currentTarget;
-          var animWidth = Math.abs(_this3.tempMoveX) > carouselDom.offsetWidth / 2 ? _this3.tempMoveX > 0 ? _this3.preMoveX + carouselDom.offsetWidth : _this3.preMoveX - carouselDom.offsetWidth : _this3.preMoveX; // handle pagination
+          var animWidth = Math.abs(_this3.tempMoveX) > carouselDom.offsetWidth / 2 || moveSpeed > 0.5 ? _this3.tempMoveX > 0 ? _this3.preMoveX + carouselDom.offsetWidth : _this3.preMoveX - carouselDom.offsetWidth : _this3.preMoveX; // handle pagination
 
           _this3.activeIdx = Math.abs(animWidth) / carouselDom.offsetWidth;
           if (_this3.loop && _this3.activeIdx >= _this3.length - 1) _this3.activeIdx = 0; // handle animation
