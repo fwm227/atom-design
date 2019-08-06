@@ -29,7 +29,7 @@ export default {
     }
   },
   render (h) {
-    return h('label', {staticClass: 'table-switch'}, [
+    return h('label', {staticClass: 'atom-switch'}, [
       h('input', {
         staticClass: 'switch-input',
         attrs: {
