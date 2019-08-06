@@ -37,6 +37,15 @@ var _default = {
     color: {
       type: String,
       default: '#108ee9'
+    },
+    isLight: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    shadowStyle: function shadowStyle() {
+      if (this.isLight) return "0 0 10px ".concat(this.color);else return "0 0 3px ".concat(this.color);
     }
   },
   mounted: function mounted() {
@@ -63,7 +72,7 @@ var _default = {
       style: {
         left: "".concat(this.anim_move, "%"),
         background: this.color,
-        'box-shadow': "0 0 10px ".concat(this.color)
+        'box-shadow': this.shadowStyle
       },
       on: {
         touchstart: function touchstart() {

@@ -4,6 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+
+require("./style.css");
+
 var _default = {
   name: 'atom-switch',
   computed: {
