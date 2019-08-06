@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import atomD from '../bundle/atomD.min';
+import atomD from '../bundle/atomD.min.js';
 import {
   Badge,
   Button,
