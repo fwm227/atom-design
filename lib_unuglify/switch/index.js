@@ -39,7 +39,7 @@ var _default = {
     var _this = this;
 
     return h('label', {
-      staticClass: 'table-switch'
+      staticClass: 'atom-switch'
     }, [h('input', {
       staticClass: 'switch-input',
       attrs: {
