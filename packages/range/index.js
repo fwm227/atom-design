@@ -39,7 +39,7 @@ export default {
   computed: {
     shadowStyle () {
       if (this.isLight) return `0 0 10px ${this.color}`;
-      else return `0 0 3px ${this.color}`
+      else return `0 0 3px ${this.color}`;
     }
   },
   mounted () {
