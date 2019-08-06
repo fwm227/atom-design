@@ -6,7 +6,7 @@
 /.travis.yml
 /.babelrc
 /.eslintignore
-/.eslintrc.js
+/.eslintrc
 /.gitignore
 /.npmignore
 /packages/

@@ -1,5 +1,5 @@
 export default {
-  name: 'table-switch',
+  name: 'atom-switch',
   computed: {
     inner_value: {
       get () {

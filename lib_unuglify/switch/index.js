@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _default = {
-  name: 'table-switch',
+  name: 'atom-switch',
   computed: {
     inner_value: {
       get: function get() {

@@ -1,6 +1,6 @@
 {
   "name": "atom-design",
-  "version": "1.4.8",
+  "version": "1.5.0",
   "description": "Mobile side UI-library base on Vue.js",
   "main": "bundle/atomD.min.js",
   "scripts": {

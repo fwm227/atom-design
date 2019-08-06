@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import atomD from '../bundle/atomD.min.js';
+import atomD from '../bundle/atomD.min';
 import {
   Badge,
   Button,
@@ -44,7 +44,6 @@ const compList = [
   Tabs,
   Textarea
 ];
-
 const componentNames = [
   'atom-badge',
   'atom-btn',
