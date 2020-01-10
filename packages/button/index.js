@@ -5,27 +5,25 @@ export default {
   data () {
     return {
       active: false,
-      cacheStyle: {}
+      cacheStyle: new Map()
     };
   },
   computed: {
-    typeClass () {
-      return this.type === 'primary' ? 'btn-primary' : this.type === 'danger' ? 'btn-danger' : this.type === 'warning' ? 'btn-warning' : 'btn-default';
-    },
     activeStyle () {
       if (this.active) {
         const btnStyles = document.defaultView.getComputedStyle(this.$el);
-        // handle conflict between style and actionStyle
-        Object.keys(this.actionStyle).forEach((el, index) => {
-          if (btnStyles[el]) {
-            this.cacheStyle[el] = btnStyles[el];
-            this.$el.style[el] = this.actionStyle[el];
+        // handle conflict between custom-style and actionStyle
+        Object.keys(this.actionStyle).forEach(key => {
+          if (btnStyles[key]) {
+            this.cacheStyle.set(key, btnStyles[key]);
+            this.$el.style[key] = this.actionStyle[key];
           }
         });
       } else {
-        Object.keys(this.cacheStyle).forEach((el, index) => {
-          this.$el.style[el] = this.cacheStyle[el];
+        this.cacheStyle.forEach((val, key) => {
+          this.$el.style[key] = val;
         });
+        this.cacheStyle.clear();
       }
     },
     sizeClass () {
@@ -56,7 +54,7 @@ export default {
       },
       class: [
         'atom-btn',
-        this.typeClass,
+        `btn-${this.type}`,
         this.sizeClass
       ],
       style: this.activeStyle,

@@ -28,10 +28,10 @@
       background: #fefefe;
     }
     &::after {
-      top: 0.5px;
+      top: 0px;
       left: 1px;
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       border-radius: 100%;
       background: white;
       box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3);
