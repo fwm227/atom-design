@@ -10,3 +10,11 @@ script:
 
 after_success:
   - npm run test
+
+deploy:
+  provider: npm
+  email: 927627286@qq.com
+  api_key: "$NPM_TOKEN"
+  skip_cleanup: true
+  on:
+    all_branches: true

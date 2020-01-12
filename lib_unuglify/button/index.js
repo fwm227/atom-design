@@ -12,29 +12,28 @@ var _default2 = {
   data: function data() {
     return {
       active: false,
-      cacheStyle: {}
+      cacheStyle: new Map()
     };
   },
   computed: {
-    typeClass: function typeClass() {
-      return this.type === 'primary' ? 'btn-primary' : this.type === 'danger' ? 'btn-danger' : this.type === 'warning' ? 'btn-warning' : 'btn-default';
-    },
     activeStyle: function activeStyle() {
       var _this = this;
 
       if (this.active) {
-        var btnStyles = document.defaultView.getComputedStyle(this.$el); // handle conflict between style and actionStyle
+        var btnStyles = document.defaultView.getComputedStyle(this.$el); // handle conflict between custom-style and actionStyle
 
-        Object.keys(this.actionStyle).forEach(function (el, index) {
-          if (btnStyles[el]) {
-            _this.cacheStyle[el] = btnStyles[el];
-            _this.$el.style[el] = _this.actionStyle[el];
+        Object.keys(this.actionStyle).forEach(function (key) {
+          if (btnStyles[key]) {
+            _this.cacheStyle.set(key, btnStyles[key]);
+
+            _this.$el.style[key] = _this.actionStyle[key];
           }
         });
       } else {
-        Object.keys(this.cacheStyle).forEach(function (el, index) {
-          _this.$el.style[el] = _this.cacheStyle[el];
+        this.cacheStyle.forEach(function (val, key) {
+          _this.$el.style[key] = val;
         });
+        this.cacheStyle.clear();
       }
     },
     sizeClass: function sizeClass() {
@@ -67,7 +66,7 @@ var _default2 = {
         name: 'button',
         type: 'button'
       },
-      class: ['atom-btn', this.typeClass, this.sizeClass],
+      class: ['atom-btn', "btn-".concat(this.type), this.sizeClass],
       style: this.activeStyle,
       on: {
         touchstart: function touchstart() {

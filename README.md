@@ -4,7 +4,7 @@
 
 Mobile side UI-library base on Vue.js
 
-[![Build Status](https://travis-ci.org/Allen227/atom-design.svg?branch=master)](https://travis-ci.org/Allen227/atom-design) [![Version](https://img.shields.io/badge/npm-1.5.6-blue.svg)](https://www.npmjs.com/package/atom-design) [![Gitter](https://badges.gitter.im/atom_design/AtomDesign.svg)](https://gitter.im/atom_design/AtomDesign?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Build Status](https://travis-ci.org/Allen227/atom-design.svg?branch=master)](https://travis-ci.org/Allen227/atom-design) [![Version](https://img.shields.io/badge/npm-1.6.1-blue.svg)](https://www.npmjs.com/package/atom-design) [![Gitter](https://badges.gitter.im/atom_design/AtomDesign.svg)](https://gitter.im/atom_design/AtomDesign?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## 📱 Environment Support
 
@@ -36,10 +36,6 @@ Vue.use(atomD)
 
 ## 📝 Documentation
 Please click this [Documentation](https://atom-design.github.io/docs/#/)
-
-## ❤ Support Atom-Design
-
-You can buy a drink for us If you feel the atom-design is good to use then click this [Support Atom-Design](https://www.patreon.com/remingchan)
 
 ## 📃 License
 
