@@ -1,6 +1,6 @@
 {
   "name": "atom-design",
-  "version": "1.5.6",
+  "version": "1.6.1",
   "description": "Mobile side UI-library base on Vue.js",
   "main": "bundle/atomD.min.js",
   "scripts": {
@@ -21,7 +21,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reming0227/atom-design.git"
+    "url": "git+https://github.com/Allen227/atom-design.git"
   },
   "keywords": [
     "atom-design",
@@ -33,12 +33,12 @@
     "ui",
     "component"
   ],
-  "author": "Reming",
+  "author": "Allen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/reming0227/atom-design/issues"
+    "url": "https://github.com/Allen227/atom-design/issues"
   },
-  "homepage": "https://github.com/reming0227/atom-design#readme",
+  "homepage": "https://github.com/Allen227/atom-design#readme",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
