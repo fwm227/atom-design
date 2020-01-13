@@ -1,6 +1,6 @@
 module.exports = {
   verbose: true,
-  testRegex: "/test/.*.test.jsx?$",
+  testRegex: "/tests/.*.test.jsx?$",
   moduleFileExtensions: ['js'],
   moduleDirectories: ['node_modules'],
   moduleNameMapper: {
